@@ -45,12 +45,12 @@ const ArticleImagePreview = ({
        type="button"
        className={css.preview}
        onClick={handleClick}
-       aria-label="Choose article image"
+       aria-label="Вибрати зображення статті"
      >
        {previewUrl ? (
          <Image
            src={previewUrl}
-           alt="Article preview"
+           alt="Попередній перегляд статті"
            fill
            unoptimized
            className={css.image}

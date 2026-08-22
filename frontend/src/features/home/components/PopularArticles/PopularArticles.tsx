@@ -24,7 +24,7 @@ export const PopularArticles = () => {
       <Container className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            Popular Articles
+            Популярні статті
           </h2>
 
           <Link
@@ -32,7 +32,7 @@ export const PopularArticles = () => {
             className={styles.link}
             scroll
           >
-            Go to all Articles{' '}
+            Перейти до всіх статей{' '}
             <span className={styles.arrow}>
               ↗
             </span>
@@ -47,7 +47,7 @@ export const PopularArticles = () => {
 
         {isError && (
           <div className={styles.centerContainer}>
-            <p>Failed to load popular articles.</p>
+            <p>Не вдалося завантажити популярні статті.</p>
           </div>
         )}
 

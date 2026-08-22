@@ -25,7 +25,7 @@ export function ProfileInfo({
   return (
     <section
       className={styles.profile}
-      aria-label="Profile information"
+      aria-label="Інформація профілю"
     >
       <Image
         className={styles.avatar}

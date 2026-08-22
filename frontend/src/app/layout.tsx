@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     default: 'Harmoniq Community',
     template: '%s | Harmoniq Community',
   },
-  description: 'Find your harmony in community.',
+  description: 'Знайдіть свою гармонію у спільноті.',
   openGraph: {
     title: 'Harmoniq Community',
-    description: 'Find your harmony in community.',
+    description: 'Знайдіть свою гармонію у спільноті.',
     url: 'https://harmoniq.com',
     siteName: 'Harmoniq Community',
     locale: 'uk_UA',

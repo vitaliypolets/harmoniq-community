@@ -98,7 +98,7 @@ export default function AuthorsPage() {
   return (
     <section className={styles.page}>
       <Container>
-        <h1 className={styles.title}>Authors</h1>
+        <h1 className={styles.title}>Автори</h1>
 
         <AuthorsList authors={authors} />
 
@@ -110,7 +110,7 @@ export default function AuthorsPage() {
             disabled={isFetchingNextPage}
             className={styles.button}
           >
-            {isFetchingNextPage ? 'Loading...' : 'Load More'}
+            {isFetchingNextPage ? 'Завантаження...' : 'Показати ще'}
           </Button>
         )}
       </Container>

@@ -12,8 +12,8 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: "Edit article",
-  description: "Edit your article in Harmoniq.",
+  title: "Редагувати статтю",
+  description: "Редагуйте свою статтю в Harmoniq Community.",
 };
 
 const EditArticlePage = async ({ params }: Props) => {
@@ -27,7 +27,7 @@ const EditArticlePage = async ({ params }: Props) => {
     <AuthGuard>
       <section>
         <Container className={styles.page}>
-          <h1 className={styles.title}>Edit article</h1>
+          <h1 className={styles.title}>Редагувати статтю</h1>
           <EditArticleForm articleId={articleId} />
         </Container>
       </section>

@@ -19,7 +19,7 @@ export default function ProfilePage() {
         className={styles.title}
         id="profile-title"
       >
-        My Profile
+        Мій профіль
       </h1>
 
       {user ? (

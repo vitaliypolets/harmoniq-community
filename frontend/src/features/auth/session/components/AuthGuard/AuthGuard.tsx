@@ -25,7 +25,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
   }, [isAuthenticated, isInitialized, router]);
 
   if (!isInitialized) {
-    return <div>Loading...</div>;
+    return <div>Завантаження...</div>;
   }
 
   if (!isAuthenticated) {

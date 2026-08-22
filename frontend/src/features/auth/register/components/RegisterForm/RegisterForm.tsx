@@ -36,8 +36,8 @@ function getPasswordStrength(password: string): StrengthLevel {
 
 const STRENGTH_LABEL: Record<StrengthLevel, string> = {
   empty: "",
-  weak: "Weak",
-  strong: "Strong",
+  weak: "Слабкий",
+  strong: "Надійний",
 };
 
 export function capitalizeWords(value: string): string {
@@ -113,7 +113,7 @@ export function RegisterFormFields() {
         setEmailDuplicate(false);
       } else {
         setEmailDuplicate(true);
-        toast.error("User is already registered. Please go to the login page to sign in.");
+        toast.error("Користувач уже зареєстрований. Перейдіть на сторінку входу.");
       }
     } catch {
       if (requestId !== emailCheckId.current) return;
@@ -210,7 +210,7 @@ export function RegisterFormFields() {
         />
         {submitCount > 0 && errors.name && <p className={styles.error}>{errors.name}</p>}
         {submitCount > 0 && !errors.name && values.name && (
-          <p className={styles.success}>Success</p>
+          <p className={styles.success}>Успішно</p>
         )}
       </div>
 
@@ -228,9 +228,9 @@ export function RegisterFormFields() {
           onChange={handleEmailChange}
           onBlur={handleEmailBlur}
         />
-        {isCheckingEmail && <p className={styles.success}>Checking email...</p>}
+        {isCheckingEmail && <p className={styles.success}>Перевірка email...</p>}
         {!isCheckingEmail && emailDuplicate && (
-          <p className={styles.error}>Email is already registered</p>
+          <p className={styles.error}>Ця електронна адреса вже зареєстрована</p>
         )}
         {!isCheckingEmail && !emailDuplicate && submitCount > 0 && errors.email && (
           <p className={styles.error}>{errors.email}</p>
@@ -239,7 +239,7 @@ export function RegisterFormFields() {
           !emailDuplicate &&
           submitCount > 0 &&
           !errors.email &&
-          values.email && <p className={styles.success}>Success</p>}
+          values.email && <p className={styles.success}>Успішно</p>}
       </div>
 
       <div className={styles.fieldGroup}>
@@ -259,7 +259,7 @@ export function RegisterFormFields() {
             type="button"
             className={styles.passwordToggle}
             onClick={() => setShowPassword((prev) => !prev)}
-            aria-label={showPassword ? "Hide password" : "Show password"}
+            aria-label={showPassword ? "Приховати пароль" : "Показати пароль"}
           >
             <svg className={styles.passwordIcon} width="24" height="24" aria-hidden="true">
               <use href={`/icons/sprite.svg#${showPassword ? "icon-eye" : "icon-eye-crossed"}`} />
@@ -288,7 +288,7 @@ export function RegisterFormFields() {
 
         {submitCount > 0 && errors.password && <p className={styles.error}>{errors.password}</p>}
         {submitCount > 0 && !errors.password && values.password && (
-          <p className={styles.success}>Success</p>
+          <p className={styles.success}>Успішно</p>
         )}
       </div>
 
@@ -309,7 +309,7 @@ export function RegisterFormFields() {
             type="button"
             className={styles.passwordToggle}
             onClick={() => setShowConfirmPassword((prev) => !prev)}
-            aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+            aria-label={showConfirmPassword ? "Приховати пароль" : "Показати пароль"}
           >
             <svg className={styles.passwordIcon} width="24" height="24" aria-hidden="true">
               <use
@@ -322,7 +322,7 @@ export function RegisterFormFields() {
           <p className={styles.error}>{errors.confirmPassword}</p>
         )}
         {submitCount > 0 && !errors.confirmPassword && values.confirmPassword && (
-          <p className={styles.success}>Success</p>
+          <p className={styles.success}>Успішно</p>
         )}
       </div>
 
@@ -334,13 +334,13 @@ export function RegisterFormFields() {
         aria-disabled={isSubmitting || isBlocked}
         disabled={isSubmitting || isBlocked}
       >
-        Create account
+        Створити обліковий запис
       </Button>
 
       <p className={styles.instructions}>
         Already have an account?{" "}
         <Link className={styles.link} href="/login">
-          Log in
+          Увійти
         </Link>
       </p>
     </Form>
@@ -357,10 +357,10 @@ export default function RegisterForm() {
         email: values.email,
       });
       setRegisterPassword(values.password);
-      toast.success("Great! Now add a profile photo.");
+      toast.success("Чудово! Тепер додайте фото профілю.");
       router.push("/photo");
     } catch {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Щось пішло не так. Спробуйте ще раз.");
     }
   };
 

@@ -8,10 +8,10 @@ import { NAME_REGEXP } from '../../auth/register/register.schema'
 
 export const nameSchema = Yup.string()
   .trim()
-  .required("Name is required")
-  .min(2, "Name must be at least 2 characters")
-  .max(32, "Name must be at most 32 characters")
-  .matches(NAME_REGEXP, "Name must not contain numbers or special characters");
+  .required("Ім’я є обов’язковим")
+  .min(2, "Ім’я має містити щонайменше 2 символи")
+  .max(32, "Ім’я має містити не більше 32 символів")
+  .matches(NAME_REGEXP, "Ім’я не повинно містити цифр або спеціальних символів");
 
 export const profileEditSchema = Yup.object({
   name: nameSchema,
@@ -20,12 +20,12 @@ export const profileEditSchema = Yup.object({
     .nullable()
     .test(
       "fileSize",
-      "Avatar must be up to 1 MB",
+      "Розмір аватара не повинен перевищувати 1 МБ",
       (file) => !file || (file instanceof File && file.size <= MAX_AVATAR_SIZE),
     )
     .test(
       "fileType",
-      "Only JPEG, PNG and WebP are allowed",
+      "Дозволені лише JPEG, PNG та WebP",
       (file) => !file || (file instanceof File && ALLOWED_AVATAR_MIME_TYPES.includes(file.type)),
     ),
 });

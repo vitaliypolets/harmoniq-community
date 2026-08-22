@@ -9,7 +9,7 @@ type AuthorsListProps = {
 
 export default function AuthorsList({ authors }: AuthorsListProps) {
   if (authors.length === 0) {
-    return <p className={styles.empty}>No authors found.</p>;
+    return <p className={styles.empty}>Авторів не знайдено.</p>;
   }
 
   return (

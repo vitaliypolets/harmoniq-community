@@ -49,7 +49,7 @@ export default function ArticlesPage() {
 
   return (
     <main className={styles.page}>
-      <h1 className={styles.title}>Articles</h1>
+      <h1 className={styles.title}>Статті</h1>
 
       <div className={styles.controlsWrapper}>
         <ArticlesCounter totalItems={totalItems} />

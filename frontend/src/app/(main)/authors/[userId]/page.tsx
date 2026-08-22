@@ -42,7 +42,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
   }, [params, router]);
 
   if (!author || !userId) {
-    return "Loading...";
+    return "Завантаження...";
   }
 
   const firstName = author.name.split(" ")[0];
