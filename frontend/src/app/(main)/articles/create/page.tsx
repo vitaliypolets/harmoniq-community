@@ -9,7 +9,7 @@ import styles from './CreateArticlePage.module.css';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? '';
 
 const pageTitle = 'Create an article';
-const pageDescription = 'Create a new personal article in Harmoniq.';
+const pageDescription = 'Create a new personal article in Harmoniq Community.';
 const pageUrl = `${siteUrl}/articles/create`;
 
 export const metadata: Metadata = {

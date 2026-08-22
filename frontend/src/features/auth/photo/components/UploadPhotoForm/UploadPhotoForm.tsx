@@ -105,7 +105,7 @@ export default function UploadPhotoForm() {
       setSession(result.user, result.accessToken);
       clearRegisterDraft();
       clearRegisterPassword();
-      toast.success("Welcome to Harmoniq!");
+      toast.success("Welcome to Harmoniq Community!");
       router.replace("/");
     } catch (err) {
       const message = isAxiosError<{ message?: string }>(err)
