@@ -1,0 +1,105 @@
+.userModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.userModalTitle {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-md);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Avatar */
+
+.avatarPicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 136px;
+  height: 136px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.avatarPicker:disabled {
+  cursor: default;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarFileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Name */
+
+.nameLabel {
+  align-self: flex-start;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.nameInput {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-muted);
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  width: 100%;
+  height: var(--input-height-md);
+  background-color: var(--color-bg-input);
+  font: inherit;
+}
+
+.nameInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.nameInput::placeholder {
+  color: var(--color-gray-medium);
+}
+
+.nameInput:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Error */
+
+.avatarError {
+  display: flex;
+  align-self: flex-start;
+  padding-inline: 12px;
+  width: 100%;
+  min-height: 16px;
+  margin-top: -8px;
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+/* Button */
+
+.avatarSaveButton {
+  width: 100%;
+  max-width: 296px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+}

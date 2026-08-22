@@ -1,0 +1,47 @@
+.profile {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.avatar {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+  border-radius: var(--border-radius-full);
+  object-fit: cover;
+}
+
+.details {
+  min-width: 0;
+}
+
+.name {
+  overflow-wrap: anywhere;
+  color: var(--color-text-main);
+  font-size: var(--font-size-main);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-secondary);
+}
+
+.count {
+  min-height: calc(var(--font-size-xs) * var(--line-height-main));
+  margin-top: var(--spacing-2xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-main);
+}
+
+@media screen and (min-width: 768px) {
+  .profile {
+    gap: var(--spacing-lg);
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+  }
+}

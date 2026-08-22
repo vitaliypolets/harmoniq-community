@@ -1,0 +1,102 @@
+.section {
+  margin-bottom: var(--spacing-3xl);
+  scroll-margin-top: 88px;
+}
+
+.section .container {
+  padding-inline: 0;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-md);
+  color: var(--color-black);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body);
+  color: var(--color-text-link);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity var(--transition-main),
+    transform var(--transition-main);
+}
+
+.link:hover {
+  opacity: var(--opacity-hover-link);
+}
+
+.link:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--transition-main);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Stretches the card to the tallest one in the row so the CTAs line up */
+.listItem {
+  display: flex;
+  min-width: 0;
+}
+
+/* Tablet adaptive */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Desktop adaptive */
+@media (min-width: 1440px) {
+  .link {
+    display: inline-flex;
+  }
+
+  .title {
+    font-size: var(--font-size-title-lg);
+  }
+
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Design shows 3 cards on desktop; the service still fetches 4 for tablet */
+  .listItem:nth-child(n + 4) {
+    display: none;
+  }
+}

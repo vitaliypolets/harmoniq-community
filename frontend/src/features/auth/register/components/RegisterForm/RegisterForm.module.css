@@ -1,0 +1,157 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+  text-align: center;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: start;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-muted);
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  width: 100%;
+  height: var(--input-height-md);
+  background-color: var(--color-bg-input);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.input::placeholder {
+  color: var(--color-gray-medium);
+}
+
+.inputError {
+  border-color: var(--color-error);
+}
+
+.inputError:focus {
+  outline: none;
+  border-color: var(--color-error);
+}
+
+.inputSuccess {
+  border-color: var(--color-primary-hover);
+}
+
+.inputSuccess:focus {
+  outline: none;
+  border-color: var(--color-primary-hover);
+}
+
+.error {
+  display: flex;
+  padding-inline: 12px;
+  width: 100%;
+  min-height: 16px;
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+.success {
+  display: flex;
+  padding-inline: 12px;
+  width: 100%;
+  min-height: 16px;
+  color: var(--color-primary-hover);
+  font-size: 12px;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper .input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.passwordIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.input[type="password"]::-ms-reveal,
+.input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.strength {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  margin-top: 2px;
+}
+
+.strengthBar {
+  flex: 1;
+  height: 4px;
+  border-radius: var(--border-radius-xs);
+  background-color: var(--color-gray-light);
+  transition: background-color var(--transition-main);
+}
+
+.strengthBarWeak {
+  background-color: var(--color-error);
+}
+
+.strengthBarStrong {
+  background-color: var(--color-primary);
+}
+
+.strengthLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.submitButton {
+  margin-top: 11px;
+  margin-bottom: 4px;
+}
+
+.link {
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}

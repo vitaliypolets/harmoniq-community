@@ -1,0 +1,27 @@
+.page {
+  padding-top: 46px;
+  padding-bottom: 46px;
+}
+.title {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+}
+.button {
+  display: block;
+  margin: 24px auto 0;
+  width: min(100%, 289px);
+  padding-inline: var(--spacing-lg);
+  font-size: var(--font-size-main);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Desktop Layout (від 1440px) */
+@media screen and (min-width: 1440px) {
+  .page {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+}

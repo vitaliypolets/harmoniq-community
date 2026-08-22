@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Mobile First Styles (до 767px)
+   ========================================================================== */
+
+.footer {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  padding-block: 32px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--color-bg-card-soft-green);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  text-align: center;
+  gap: var(--spacing-lg);
+}
+
+/* Логотип */
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity var(--transition-main);
+}
+
+.logoLink:hover,
+.logoLink:focus-visible {
+  opacity: var(--opacity-hover-link);
+}
+
+.logoIcon {
+  width: 165px;
+  height: 46px;
+}
+
+/* Навігаційний блок */
+.nav {
+  display: block;
+}
+
+/* Копірайт */
+.copyright {
+  margin: 0;
+
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xs);
+
+  color: var(--color-dark);
+}
+
+/* Навігаційний список */
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: var(--spacing-md);
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+}
+
+/* Посилання */
+.navLink {
+  position: relative;
+
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-primary-hover);
+  text-decoration: none;
+
+  transition: color var(--transition-main);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 1px;
+
+  background-color: currentColor;
+
+  transition: width var(--transition-main);
+}
+
+.navLink:hover::after,
+.navLink:focus-visible::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Tablet Breakpoint (від 768px)
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 200px;
+    padding-block: 0;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .navList {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+}
+
+/* ==========================================================================
+   Desktop Breakpoint (від 1440px)
+   ========================================================================== */
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    height: 94px;
+    padding-block: 0;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 0;
+  }
+
+  .logoLink {
+    order: 1;
+  }
+
+  .copyright {
+    order: 2;
+  }
+
+  .nav {
+    order: 3;
+  }
+}

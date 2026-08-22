@@ -1,0 +1,182 @@
+.article {
+  max-width: 361px;
+  margin-inline: auto;
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+.titleMainTitle {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-md);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-secondary);
+}
+.imageWrapper {
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+.imageArticle {
+  width: 100%;
+  height: 183px;
+  object-fit: cover;
+  border-radius: var(--spacing-lg);
+  display: block;
+}
+.articleContentText {
+  margin-bottom: var(--spacing-lg);
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.recomendation {
+  border-radius: var(--border-radius-card);
+  padding: var(--spacing-xl) var(--spacing-md) 40px;
+  background: var(--color-bg-card-soft-green);
+  margin-bottom: var(--spacing-lg);
+}
+.authorWrapper {
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+.authorText {
+  font-weight: var(--font-weight-regular);
+}
+.authorTextName {
+  font-weight: var(--font-weight-regular);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-skip-ink: none;
+  transition: opacity var(--transition-main),
+              text-decoration-color var(--transition-main);
+}
+.intrastedText {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-sm);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+.recommendList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+.recommendItem {
+  border-radius: var(--border-radius-card);
+  padding: var(--spacing-md);
+  min-height: 108px;
+  background: var(--color-bg-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background var(--transition-main);
+} 
+
+.recommendArticleLink {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-secondary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: opacity var(--transition-main),
+              text-decoration-color var(--transition-main);
+}
+.recommendArticleiconWrapper {
+  border: var(--color-primary-hover) solid 1px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recommendArticleicon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-primary-hover);
+  transform: rotate(-45deg);
+  transition: transform var(--transition-main);
+}
+.recommendAuthorLink {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: opacity var(--transition-main),
+              text-decoration-color var(--transition-main);
+}
+.articleBookmarkWrapper {
+  width: 100%;
+  height: var(--btn-height-xl);
+  font-size: var(--font-size-main);
+  font-weight: 700;
+}
+
+.articleBookmarkWrapper .articleBookmarkButton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--border-radius-btn);
+  cursor: pointer;
+  transition: background-color var(--transition-main);
+}
+
+/* Tablet (від 768px) */
+@media screen and (min-width: 768px) {
+  .article {
+    max-width: 704px;
+  }
+  .imageArticle {
+    height: 358px;
+  }
+}
+
+/* Desktop (від 1440px) */
+@media screen and (min-width: 1440px) {
+  .article {
+    max-width: 1225px;
+  }
+  .imageArticle {
+    height: 624px;
+  }
+  .titleMainTitle {
+    font-size: var(--font-size-title-lg);
+  }
+  .subContentArticle {
+    display: flex;
+    gap: 24px;
+  }
+  .recomendation{
+    width: 393px;
+  }
+  .recommendAuthorLink:hover, 
+  .authorTextName:hover,
+  .recommendArticleLinkItem:hover .recommendArticleLink,
+  .recommendAuthorLink:focus, 
+  .authorTextName:focus,
+  .recommendArticleLinkItem:focus .recommendArticleLink{
+    opacity: var(--opacity-hover-link);
+  }
+  .recommendAuthorLink:active, 
+  .authorTextName:active,
+  .recommendArticleLinkItem:active .recommendArticleLink {
+    opacity: 1;
+    text-decoration-color: var(--color-text-link);
+  }
+  .recommendArticleLinkItem:hover .recommendArticleicon {
+    transform: rotate(-90deg);
+  }
+  .articleBookmarkWrapper .articleBookmarkButton:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+  }
+  .articleBookmarkWrapper .articleBookmarkButton:focus:not(:disabled) {
+    box-shadow: 0 0 0 6px rgba(78, 70, 180, 0.12), 0 0 0 2px #fff;
+  }
+}

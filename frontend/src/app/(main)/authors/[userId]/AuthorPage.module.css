@@ -1,0 +1,58 @@
+@media screen and (min-width: 320px) {
+  .page {
+    padding-top: 46px;
+    padding-bottom: 46px;
+    text-align: center;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  .user_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2xs);
+    min-width: 0;
+  }
+  .avatarWrapper {
+    position: relative;
+    width: 124px;
+    height: 124px;
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+  }
+  .avatar {
+    object-fit: cover;
+  }
+  .name {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-title-sm);
+    text-align: left;
+    color: var(--color-dark);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .articles {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-main);
+    color: var(--color-dark);
+  }
+}
+@media screen and (min-width: 375px) {
+  .name {
+    font-size: var(--font-size-title-md);
+  }
+}
+/* Tablet Layout (від 768px) */
+@media screen and (min-width: 768px) {
+  .avatarWrapper {
+    width: 137px;
+    height: 137px;
+  }
+}

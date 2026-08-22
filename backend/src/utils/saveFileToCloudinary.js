@@ -1,0 +1,26 @@
+import cloudinary from '../config/cloudinary.js';
+
+export const saveFileToCloudinary = (file) =>
+  new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: 'harmoniq/articles',
+        resource_type: 'image',
+      },
+      (error, result) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        if (!result) {
+          reject(new Error('Cloudinary upload failed'));
+          return;
+        }
+
+        resolve(result);
+      },
+    );
+
+    stream.end(file.buffer);
+  });

@@ -1,0 +1,107 @@
+/* Оверлей (Backdrop) на весь екран */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-md);
+
+  /* Легка анімація появи оверлею */
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.backdropTransparent {
+  background-color: transparent;
+}
+
+/* Тіло модального вікна */
+.modalContent {
+  position: relative;
+  background-color: var(--color-bg-card-soft-green);
+  border-radius: var(--border-radius-card);
+  padding: 56px var(--spacing-xl) var(--spacing-xl);
+  width: 100%;
+  max-width: 361px;
+  box-sizing: border-box;
+
+  /* Захист від виходу за межі екрана на малих дисплеях */
+  max-height: calc(100vh - var(--spacing-xl));
+  overflow-y: auto;
+
+  /* Кастомний акуратний скролбар (за потреби) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-main) transparent;
+
+  /* Анімація появи самого вікна */
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+/* Кнопка закриття (хрестик) */
+.closeButton {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-xl);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-main);
+  transition:
+    opacity var(--transition-main),
+    transform var(--transition-main);
+}
+
+.closeButton:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-text-main);
+  outline-offset: 2px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+/* Адаптив під планшети та десктоп */
+@media screen and (min-width: 768px) {
+  .modalContent {
+    max-width: 499px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modalContent {
+    max-width: 420px;
+  }
+}
+
+/* Keyframes для плавної анімації відкриття */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,257 @@
+.form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'image'
+    'titleField'
+    'description'
+    'submit';
+
+  width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  row-gap: var(--spacing-lg);
+}
+
+/* =========================
+FORM FIELDS
+========================= */
+
+.imageField,
+.titleField,
+.descriptionField {
+  width: 100%;
+  min-width: 0;
+}
+
+.imageField {
+  grid-area: image;
+}
+
+.titleField {
+  grid-area: titleField;
+  margin: 0;
+}
+
+.descriptionField {
+  grid-area: description;
+  margin: 0;
+}
+
+/* =========================
+LABEL
+========================= */
+
+.label {
+  display: block;
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--font-size-main);
+}
+
+/* =========================
+INPUT / TEXTAREA WRAPPERS
+========================= */
+
+.inputWrapper,
+.textareaWrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================
+INPUT / TEXTAREA
+========================= */
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border: var(--border-width-sm) solid var(--color-gray-muted);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-bg-input);
+  color: var(--color-text-main);
+  outline: none;
+  transition:
+    border-color var(--transition-main),
+    box-shadow var(--transition-main),
+    color var(--transition-main);
+}
+
+.input {
+  height: var(--input-height-lg);
+  padding: 0 var(--spacing-sm);
+}
+
+.textarea {
+  min-height: 393px;
+  padding: var(--spacing-sm);
+  resize: none;
+  overflow: hidden;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
+
+/* =========================
+HOVER
+========================= */
+
+.inputWrapper:hover .input,
+.textareaWrapper:hover .textarea {
+  border-color: var(--color-primary);
+}
+
+/* =========================
+FILLED
+========================= */
+
+.filledState .input,
+.filledState .textarea {
+  border-color: var(--color-gray-muted);
+}
+
+.filledState .input::placeholder,
+.filledState .textarea::placeholder {
+  color: var(--color-text-main);
+}
+
+/* =========================
+ACTIVE / FOCUS
+========================= */
+
+.inputWrapper:focus-within .input,
+.textareaWrapper:focus-within .textarea {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* =========================
+ERROR
+========================= */
+
+.errorState .input,
+.errorState .textarea {
+  border-color: var(--color-error);
+  box-shadow: none;
+}
+
+.errorState .input::placeholder,
+.errorState .textarea::placeholder {
+  color: var(--color-error);
+}
+
+/* =========================
+ERROR + ACTIVE
+========================= */
+
+.errorState:focus-within .input,
+.errorState .input:focus,
+.errorState:focus-within .textarea {
+  border-color: var(--color-error);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* =========================
+ERROR MESSAGE
+========================= */
+
+.error {
+  margin: var(--spacing-2xs) 0 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-secondary);
+  color: var(--color-error);
+}
+
+/* =========================
+SUBMIT BUTTON
+========================= */
+
+.submitButton {
+  grid-area: submit;
+  width: 100%;
+  min-width: 0;
+  height: var(--btn-height-lg);
+  padding: 0 var(--spacing-md);
+  border-radius: var(--border-radius-btn);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: var(--font-weight-bold);
+  transition:
+    background-color var(--transition-main),
+    opacity var(--transition-main),
+    box-shadow var(--transition-main);
+}
+
+.submitButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* =========================
+MOBILE
+375px–767px
+========================= */
+
+@media screen and (min-width: 375px) {
+  .form {
+    width: 100%;
+    row-gap: var(--spacing-lg);
+  }
+}
+
+/* =========================
+TABLET
+768px–1439px
+========================= */
+
+@media screen and (min-width: 768px) {
+  .form {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-areas:
+      'image titleField'
+      'description description'
+      'submit submit';
+
+    width: 100%;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-lg);
+  }
+
+  .imageField,
+  .titleField {
+    align-self: start;
+  }
+}
+
+/* =========================
+DESKTOP
+1440px+
+========================= */
+
+@media screen and (min-width: 1440px) {
+  .form {
+    grid-template-columns:
+      minmax(0, 2fr) minmax(360px, 1fr);
+
+    grid-template-areas:
+      'titleField image'
+      'description image'
+      'submit image';
+
+    width: 100%;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-xl);
+  }
+
+  .imageField {
+    align-self: start;
+    margin-top: 28px;
+  }
+}
+

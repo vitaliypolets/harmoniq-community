@@ -1,0 +1,42 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 16px) / 2);
+  padding: var(--spacing-sm);
+  align-items: center;
+}
+
+/* Tablet Layout (від 768px) */
+@media screen and (min-width: 768px) {
+  .list {
+    gap: var(--spacing-lg);
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+  .item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+/* Desktop Layout (від 1440px) */
+@media screen and (min-width: 1440px) {
+  .list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .item {
+    width: calc((100% - 72px) / 4);
+    transition: transform 0.3s ease;
+  }
+  .item:hover,
+  .item:focus {
+    transform: scale(1.08);
+  }
+}

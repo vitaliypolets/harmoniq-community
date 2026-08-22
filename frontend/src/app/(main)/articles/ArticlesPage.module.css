@@ -1,0 +1,23 @@
+.page {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+
+  padding-top: 48px;
+  padding-bottom: 40px;
+}
+
+.title {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-title-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  margin-bottom: var(--spacing-md);
+}
+
+.controlsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}

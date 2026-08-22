@@ -1,0 +1,223 @@
+/* globals.css */
+@import 'modern-normalize/modern-normalize.css';
+
+:root {
+  /* ==========================================================================
+     1. Brand & Primary Palette
+     ========================================================================== */
+  --color-primary: #649179; /* Normal Green Button Background */
+  --color-primary-hover: #374f42; /* Hover Green Button */
+
+  /* ==========================================================================
+     2. Neutral & Base Colors
+     ========================================================================== */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark: #070721; /* Article Text & Headings */
+  --color-dark-alt: #232533;
+  --color-gray-dark: #212529;
+  --color-gray-medium: #595d62; /* Input Text & Asterisk & Placeholder text (*) */
+  --color-gray-muted: #9f9f9f; /* Input Border */
+  --color-gray-light: #ced4da;
+  --color-gray-bg: #f8f9fa;
+
+  /* ==========================================================================
+     3. Semantic Tokens
+     ========================================================================== */
+  /* Surfaces & Backgrounds */
+  --color-bg-body: #f7fffb; /* Main Body/Page Background */
+  --color-bg-card-soft-green: #d1e0d8; /* Soft Green bg for Header, Footer & Cards */
+  --color-bg-input: #f7fffb; /* Input Field Background */
+
+  /* Text colors */
+  --color-text-main: var(--color-dark); /* #070721 */
+  --color-text-hero: var(--color-primary-hover); /* #374f42 */
+  --color-text-secondary: var(--color-gray-medium); /* #595d62 */
+  --color-text-link: var(--color-primary-hover); /* #374f42 */
+  --color-text-on-primary: #f7fffb; /* #f7fffb (для зеленої кнопки) */
+  --color-text-on-light: var(--color-dark); /* #070721 (для білої кнопки) */
+
+  /* Feedback States */
+  --color-error: #ad6a6c; /* Validation error */
+
+  /* Shadows & Focus States */
+  --focus-ring-shadow: 0 0 0 4px rgba(100, 145, 121, 0.2);
+  --shadow-dropdown: 0 0 1px 0 rgba(0, 0, 0, 0.4), 0 8px 24px -6px rgba(0, 0, 0, 0.16);
+
+  /* Opacity levels */
+  --opacity-disabled: 0.3;
+  --opacity-hover-link: 0.5;
+
+  /* ==========================================================================
+     4. Typography
+     ========================================================================== */
+  /* Fonts are loaded centrally in app/layout.tsx via next/font/google. */
+  --font-family-main: var(--next-font-manrope), sans-serif;
+  --font-family-secondary: var(--next-font-dm-sans), sans-serif;
+  --font-family-third: var(--next-font-noto-sans), sans-serif;
+
+  /* Design aliases kept for compatibility with Figma/design tokens. */
+  --font-family: var(--font-family-main);
+  --second-family: var(--font-family-secondary);
+  --third-family: var(--font-family-third);
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --font-size-xs: 12px;
+  --font-size-body: 16px;
+  --font-size-main: 18px;
+  --font-size-title-sm: 24px;
+  --font-size-title-md: 32px;
+  --font-size-title-lg: 40px;
+  --font-size-hero: 92px;
+
+  --line-height-main: 1.5;
+  --line-height-secondary: 1.2;
+
+  /* ==========================================================================
+     5. Component Dimensions, Borders & Radius
+     ========================================================================== */
+  /* Border Radius */
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px; /* 8px for Inputs */
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-card: 32px; /* 32px for Cards */
+  --border-radius-btn: 64px; /* 64px for Buttons */
+  --border-radius-full: 256px;
+
+  /* Border Widths */
+  --border-width-sm: 1px; /* 1px for Inputs & Outlined Buttons */
+  --border-width-md: 2px; /* 2px for Active / Focus states */
+
+  /* Layout Constraints */
+  --container-max-width: 1440px;
+
+  /* Component Heights & Widths */
+  --btn-height-sm: 32px;
+  --btn-height-md: 40px;
+  --btn-height-lg: 48px;
+  --btn-height-xl: 57px;
+
+  --input-height-sm: 33px;
+  --input-height-md: 41px;
+  --input-height-lg: 48px;
+  --input-height-textarea: 144px;
+
+  /* ==========================================================================
+     6. Spacing System (used for paddings, margins, gaps)
+     ========================================================================== */
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 72px;
+
+  /* ==========================================================================
+     7. Transitions
+     ========================================================================== */
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-time: 250ms;
+  --transition-main: var(--transition-time) var(--cubic-bezier);
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-main);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-padding-top: 80px;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+/* ==========================================================================
+   Shared Utility Classes
+   ========================================================================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(100%);
+}

@@ -1,0 +1,125 @@
+.section {
+  padding-bottom: var(--spacing-3xl);
+}
+
+.section .container {
+  padding-inline: 0;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-title-md);
+  color: var(--color-black);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body);
+  color: var(--color-text-link);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity var(--transition-main),
+    transform var(--transition-main);
+}
+
+.link:hover {
+  opacity: var(--opacity-hover-link);
+}
+
+.link:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--transition-main);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-xl) var(--spacing-md);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 148px;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.name {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+/* Tablet adaptive */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .avatarWrapper {
+    max-width: 160px;
+  }
+}
+
+/* Desktop adaptive */
+@media (min-width: 1440px) {
+  .link {
+    display: inline-flex;
+  }
+
+  .title {
+    font-size: var(--font-size-title-lg);
+  }
+
+  .list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .name {
+    font-size: var(--font-size-main);
+  }
+}

@@ -1,0 +1,100 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-btn);
+
+  /* Transitions only for color/hover state changes */
+  transition:
+    background-color var(--transition-time) var(--cubic-bezier),
+    color var(--transition-time) var(--cubic-bezier),
+    border-color var(--transition-time) var(--cubic-bezier);
+}
+
+/* ==========================================
+   PRIMARY VARIANT
+   ========================================== */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: var(--border-width-sm) solid transparent;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-on-primary);
+  border-color: var(--color-primary-hover);
+}
+
+.primary:focus-visible {
+  background-color: var(--color-primary);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.primary:disabled,
+.primary[aria-disabled='true'] {
+  background-color: var(--color-primary);
+  opacity: var(--opacity-disabled);
+  box-shadow: var(--focus-ring-shadow);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECONDARY VARIANT
+   ========================================== */
+.secondary {
+  background-color: transparent;
+  border: var(--border-width-sm) solid var(--color-text-hero);
+  color: var(--color-text-hero);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-text-on-primary);
+  border-color: var(--color-text-on-primary);
+  color: var(--color-primary-hover);
+}
+
+.secondary:focus-visible {
+  background-color: var(--color-text-on-primary);
+  border-color: var(--color-text-on-primary);
+  color: var(--color-primary-hover);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* =========================
+   SIZES
+   ========================= */
+
+.xs {
+  min-height: 38px;
+}
+.sm {
+  min-height: 40px;
+}
+.md {
+  min-height: 48px;
+}
+.lg {
+  min-height: 52px;
+}
+.xl {
+  min-height: 57px;
+}
+
+/* =========================
+   FOCUS & DISABLED
+   ========================= */
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
