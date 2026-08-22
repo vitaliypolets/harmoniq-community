@@ -13,17 +13,17 @@ export const About = () => {
       <Container className={styles.container}>
         <div className={styles.topRow}>
           <div className={styles.textCard}>
-            <h2 className={styles.title}>About us</h2>
+            <h2 className={styles.title}>Про нас</h2>
             <p className={styles.description}>
-              Harmoniq Community is a mindful publishing platform dedicated to mental health and well-being.
-              We bring together writers, thinkers, and readers who believe that open, thoughtful
-              stories can heal, inspire, and connect. Whether you’re here to share your journey or
-              learn from others — this is your space to slow down, reflect, and grow.
+              Harmoniq Community — це платформа усвідомлених публікацій, присвячена ментальному здоров’ю та добробуту.
+              Ми об’єднуємо авторів, мислителів і читачів, які вірять, що відкриті та змістовні
+              історії можуть підтримувати, надихати й об’єднувати. Незалежно від того, чи хочете ви
+              поділитися власним досвідом або навчитися в інших, тут є простір, щоб сповільнитися, осмислити й розвиватися.
             </p>
           </div>
 
           <div className={styles.lotusWrapper}>
-            <Image src={lotusImg} alt="Lotus flower" className={styles.image} placeholder="blur" />
+            <Image src={lotusImg} alt="Квітка лотоса" className={styles.image} placeholder="blur" />
           </div>
         </div>
 
@@ -31,7 +31,7 @@ export const About = () => {
           <div className={styles.friendsWrapper}>
             <Image
               src={friendsImg}
-              alt="Friends embracing on a hill at sunset"
+              alt="Друзі обіймаються на пагорбі під час заходу сонця"
               className={styles.image}
               placeholder="blur"
             />
@@ -40,7 +40,7 @@ export const About = () => {
           <div className={styles.meditationWrapper}>
             <Image
               src={meditationImg}
-              alt="Person meditating"
+              alt="Людина медитує"
               className={styles.image}
               placeholder="blur"
             />

@@ -18,13 +18,13 @@ export default function UserBar({
   return (
     <li className={css[userField]}>
       <div className={css.userFieldFirst} onClick={() => setIsUserModalOpen(true)}>
-        <button type="button" className={css.avatarLink} aria-label="Change avatar">
+        <button type="button" className={css.avatarLink} aria-label="Змінити аватар">
           <Image
             className={css.userAvatar}
             src={user?.avatarUrl || "/images/default-avatar.png"}
             width={40}
             height={40}
-            alt={user?.name || "User avatar"}
+            alt={user?.name || "Аватар користувача"}
           />
         </button>
 
@@ -35,7 +35,7 @@ export default function UserBar({
         type="button"
         onClick={() => setIsLogoutOpen(true)}
         className={css.logoutButton}
-        aria-label="Log out"
+        aria-label="Вийти"
       >
         <svg className={css.iconLogout}>
           <use href="/icons/sprite.svg#icon-log-out" />

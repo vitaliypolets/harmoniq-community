@@ -72,7 +72,7 @@ export const BookmarkButton = ({
       }
 
       const message =
-        error instanceof Error ? error.message : "Unable to update bookmark. Please try again.";
+        error instanceof Error ? error.message : "Не вдалося оновити закладку. Спробуйте ще раз.";
 
       toast.error(message);
     },
@@ -84,7 +84,7 @@ export const BookmarkButton = ({
     }
 
     if (!isAuthenticated) {
-      setErrorMessage("To save this article, you need to authorize first");
+      setErrorMessage("Щоб зберегти цю статтю, спочатку увійдіть у свій обліковий запис");
       setShowErrorModal(true);
 
       return;
@@ -109,7 +109,7 @@ export const BookmarkButton = ({
         type="button"
         onClick={handleClick}
         disabled={mutation.isPending}
-        aria-label={saved ? "Remove bookmark" : "Save bookmark"}
+        aria-label={saved ? "Видалити із збережених" : "Зберегти статтю"}
         aria-pressed={saved}
       >
         <svg className={styles.icon} viewBox="0 0 25 32" aria-hidden="true">
@@ -119,11 +119,11 @@ export const BookmarkButton = ({
         {label && <span className={styles.label}>{label}</span>}
       </button>
 
-      {mutation.isPending && <Loader label="Saving..." />}
+      {mutation.isPending && <Loader label="Збереження..." />}
 
       {showErrorModal && (
         <ModalErrorSave
-          title="Error while saving"
+          title="Помилка під час збереження"
           description={errorMessage}
           onClose={() => setShowErrorModal(false)}
         />

@@ -62,7 +62,7 @@ export function MyArticlesTab() {
   const hasQueryError = query.isError || isPaused;
   const errorMessage = isPaused
     ? 'You appear to be offline. Check your connection and try again.'
-    : 'Could not load your articles.';
+    : 'Не вдалося завантажити ваші статті.';
 
   useEffect(() => {
     const toastId = 'my-articles-query-error';
@@ -170,7 +170,7 @@ export function MyArticlesTab() {
   return (
     <section
       className={styles.section}
-      aria-label="My Articles"
+      aria-label="Мої статті"
     >
       {!isInitialized ||
       (Boolean(userId) &&
@@ -200,7 +200,7 @@ export function MyArticlesTab() {
 
       {query.isSuccess && !hasQueryError && articles.length === 0 ? (
         <EmptyArticlesState
-          description="Write your first article"
+          description="Напишіть свою першу статтю"
         >
           <AddArticleForm />
         </EmptyArticlesState>
@@ -224,8 +224,8 @@ export function MyArticlesTab() {
           onClick={handleLoadMore}
         >
           {query.isFetchingNextPage
-            ? 'Loading...'
-            : 'Load More'}
+            ? 'Завантаження...'
+            : 'Показати ще'}
         </button>
       ) : null}
     </section>

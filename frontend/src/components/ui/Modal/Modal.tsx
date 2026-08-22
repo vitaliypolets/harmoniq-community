@@ -76,7 +76,7 @@ export const Modal = ({
             type="button"
             className={styles.closeButton}
             onClick={onClose}
-            aria-label="Close modal"
+            aria-label="Закрити модальне вікно"
           >
             <svg
               width="24"

@@ -35,7 +35,7 @@ export const TopCreators = () => {
     <section className={styles.section} id="top-creators">
       <Container className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Top Creators</h2>
+          <h2 className={styles.title}>Популярні автори</h2>
           <Link href="/authors" className={styles.link}>
             Go to all Creators <span className={styles.arrow}>↗</span>
           </Link>

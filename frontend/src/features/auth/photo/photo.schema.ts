@@ -8,12 +8,12 @@ export const photoSchema = Yup.object({
     .nullable()
     .test(
       "fileSize",
-      "Avatar must be up to 1 MB",
+      "Розмір аватара не повинен перевищувати 1 МБ",
       (file) => !file || (file as File).size <= MAX_AVATAR_SIZE,
     )
     .test(
       "fileType",
-      "Only JPEG, PNG and WebP are allowed",
+      "Дозволені лише JPEG, PNG та WebP",
       (file) => !file || ALLOWED_AVATAR_MIME_TYPES.includes((file as File).type),
     ),
 });

@@ -44,7 +44,7 @@ export function SavedArticlesTab() {
   const hasQueryError = query.isError || isPaused;
   const errorMessage = isPaused
     ? 'You appear to be offline. Check your connection and try again.'
-    : 'Could not load saved articles.';
+    : 'Не вдалося завантажити збережені статті.';
 
   useEffect(() => {
     const toastId = 'saved-articles-query-error';
@@ -139,7 +139,7 @@ export function SavedArticlesTab() {
   if (!active) return null;
 
   return (
-    <section className={styles.section} aria-label="Saved Articles">
+    <section className={styles.section} aria-label="Збережені статті">
       {!isInitialized ||
       (Boolean(accessToken && userId) &&
         query.isPending &&
@@ -164,8 +164,8 @@ export function SavedArticlesTab() {
 
       {query.isSuccess && !hasQueryError && articles.length === 0 ? (
         <EmptyArticlesState
-          description="Save your first article"
-          actionLabel="Go to articles"
+          description="Збережіть свою першу статтю"
+          actionLabel="Перейти до статей"
           href="/articles"
         />
       ) : null}
@@ -186,7 +186,7 @@ export function SavedArticlesTab() {
           disabled={query.isFetchingNextPage}
           onClick={handleLoadMore}
         >
-          {query.isFetchingNextPage ? 'Loading...' : 'Load More'}
+          {query.isFetchingNextPage ? 'Завантаження...' : 'Показати ще'}
         </button>
       ) : null}
     </section>

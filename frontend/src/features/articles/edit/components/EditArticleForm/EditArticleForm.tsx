@@ -40,23 +40,23 @@ const EditArticleForm = ({ articleId }: EditArticleFormProps) => {
     mutationFn: (values: EditArticleFormValues) => updateArticle(articleId, values),
 
     onSuccess: () => {
-      toast.success("Article updated successfully!");
+      toast.success("Статтю успішно оновлено!");
 
       router.push(`/articles/${articleId}`);
       router.refresh();
     },
 
     onError: (error) => {
-      toast.error(error instanceof Error ? error.message : "Failed to update article");
+      toast.error(error instanceof Error ? error.message : "Не вдалося оновити статтю");
     },
   });
 
   if (isLoading) {
-    return <p>Loading article...</p>;
+    return <p>Завантаження статті...</p>;
   }
 
   if (isError || !data?.article) {
-    return <p>Failed to load article.</p>;
+    return <p>Не вдалося завантажити статтю.</p>;
   }
 
   const initialValues: EditArticleFormValues = {
@@ -107,7 +107,7 @@ const EditArticleForm = ({ articleId }: EditArticleFormProps) => {
 
           <div className={css.titleField}>
             <label htmlFor="title" className={css.label}>
-              {values.title ? "Article Title" : "Title"}
+              {values.title ? "Заголовок статті" : "Заголовок"}
             </label>
 
             <div
@@ -119,7 +119,7 @@ const EditArticleForm = ({ articleId }: EditArticleFormProps) => {
                 id="title"
                 name="title"
                 type="text"
-                placeholder="Enter the title"
+                placeholder="Введіть заголовок"
                 className={css.input}
               />
             </div>
@@ -143,7 +143,7 @@ const EditArticleForm = ({ articleId }: EditArticleFormProps) => {
                 as="textarea"
                 id="article"
                 name="article"
-                placeholder="Enter a text"
+                placeholder="Введіть текст"
                 className={css.textarea}
               />
             </div>
@@ -160,7 +160,7 @@ const EditArticleForm = ({ articleId }: EditArticleFormProps) => {
             className={css.submitButton}
             disabled={isSubmitting || isPending}
           >
-            {isSubmitting || isPending ? "Saving..." : "Save changes"}
+            {isSubmitting || isPending ? "Збереження..." : "Зберегти зміни"}
           </Button>
         </Form>
       )}

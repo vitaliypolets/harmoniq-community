@@ -32,12 +32,12 @@ export const ArticlesItem = ({
 
     onSuccess: () => {
       setIsDeleteModalOpen(false);
-      toast.success("Article deleted successfully!");
+      toast.success("Статтю успішно видалено!");
       onArticleDeleted?.(article.id);
     },
 
     onError: (error) => {
-      toast.error(error instanceof Error ? error.message : "Failed to delete article");
+      toast.error(error instanceof Error ? error.message : "Не вдалося видалити статтю");
     },
   });
 
@@ -83,7 +83,7 @@ export const ArticlesItem = ({
                 variant="secondary"
                 size="sm"
                 className={styles.editButton}
-                aria-label="Edit article"
+                aria-label="Редагувати статтю"
               >
                 <svg className={styles.editIcon} aria-hidden="true">
                   <use href="/icons/sprite.svg#icon-edit" />
@@ -95,7 +95,7 @@ export const ArticlesItem = ({
                 variant="secondary"
                 size="sm"
                 className={styles.deleteButton}
-                aria-label="Delete article"
+                aria-label="Видалити статтю"
                 disabled={isDeleting}
                 onClick={handleDelete}
               >
@@ -119,7 +119,7 @@ export const ArticlesItem = ({
         isOpen={isDeleteModalOpen}
         onClose={() => setIsDeleteModalOpen(false)}
         onConfirm={deleteArticle}
-        description="Are you sure you want to delete this article?"
+        description="Ви впевнені, що хочете видалити цю статтю?"
         isLoading={isDeleting}
       />
     </>

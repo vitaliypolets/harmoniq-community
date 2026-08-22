@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <GuestGuard>
       <section className={styles.page}>
-        <h1 className={styles.loginTitle}>Login</h1>
+        <h1 className={styles.loginTitle}>Увійти</h1>
         <LoginForm />
       </section>
     </GuestGuard>

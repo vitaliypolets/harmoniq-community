@@ -71,7 +71,7 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
       nameSchema.validateSync(value);
       return null;
     } catch (err) {
-      return err instanceof Error ? err.message : "Invalid name";
+      return err instanceof Error ? err.message : "Некоректне ім’я";
     }
   };
 
@@ -85,13 +85,13 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
     }
 
     if (!ALLOWED_AVATAR_MIME_TYPES.includes(file.type)) {
-      setError("Only JPEG, PNG and WebP are allowed");
+      setError("Дозволені лише JPEG, PNG та WebP");
       event.target.value = "";
       return;
     }
 
     if (file.size > MAX_AVATAR_SIZE) {
-      setError("Avatar must be up to 1 MB");
+      setError("Розмір аватара не повинен перевищувати 1 МБ");
       event.target.value = "";
       return;
     }
@@ -142,14 +142,14 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
         setSession(updatedUser, accessToken);
       }
 
-      toast.success("Profile updated successfully");
+      toast.success("Профіль успішно оновлено");
 
       resetForm();
       onClose();
     } catch (err) {
       const message = isAxiosError<{ message?: string }>(err)
-        ? (err.response?.data?.message ?? "Failed to update profile. Please try again.")
-        : "Failed to update profile. Please try again.";
+        ? (err.response?.data?.message ?? "Не вдалося оновити профіль. Спробуйте ще раз.")
+        : "Не вдалося оновити профіль. Спробуйте ще раз.";
 
       setError(message);
       toast.error(message);
@@ -178,17 +178,17 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
       <div className={styles.userModalContent}>
-        <h1 className={styles.userModalTitle}>Update your profile</h1>
+        <h1 className={styles.userModalTitle}>Оновити профіль</h1>
         <button
           type="button"
           className={styles.avatarPicker}
           onClick={() => inputRef.current?.click()}
-          aria-label="Choose avatar"
+          aria-label="Вибрати аватар"
           disabled={isSubmitting}
         >
           <Image
             src={previewUrl ?? getAvatarSrc(user?.avatarUrl ?? null)}
-            alt={previewUrl ? "Avatar preview" : "Current avatar"}
+            alt={previewUrl ? "Попередній перегляд аватара" : "Поточний аватар"}
             className={styles.avatarImage}
             width={136}
             height={136}
@@ -233,7 +233,7 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
           disabled={isSubmitting || !canSave}
           onClick={handleSave}
         >
-          {isSubmitting ? "Saving..." : "Save"}
+          {isSubmitting ? "Збереження..." : "Зберегти"}
         </Button>
       </div>
     </Modal>

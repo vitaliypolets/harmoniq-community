@@ -17,10 +17,10 @@ export const ConfirmModal = ({
   isOpen,
   onClose,
   onConfirm,
-  title = "Delete article",
-  description = "Are you sure you want to delete this article?",
-  confirmText = "Delete",
-  cancelText = "Cancel",
+  title = "Видалення статті",
+  description = "Ви впевнені, що хочете видалити цю статтю?",
+  confirmText = "Видалити",
+  cancelText = "Скасувати",
   isLoading = false,
 }: ConfirmModalProps) => {
   return (
@@ -30,7 +30,7 @@ export const ConfirmModal = ({
         <p className={styles.description}>{description}</p>
         <div className={styles.actions}>
           <Button variant="primary" onClick={onConfirm} disabled={isLoading}>
-            {isLoading ? "Deleting..." : confirmText}
+            {isLoading ? "Видалення..." : confirmText}
           </Button>
           <Button variant="secondary" onClick={onClose} disabled={isLoading}>
             {cancelText}

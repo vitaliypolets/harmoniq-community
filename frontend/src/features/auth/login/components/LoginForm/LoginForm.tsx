@@ -31,7 +31,7 @@ export default function LoginForm() {
       toast.error(
         error instanceof Error
           ? error.message
-          : "Login failed. Please check your email and password.",
+          : "Не вдалося увійти. Перевірте email і пароль.",
       );
     }
   };
@@ -77,7 +77,7 @@ export default function LoginForm() {
               type="button"
               className={styles.passwordToggle}
               onClick={() => setShowPassword((prev) => !prev)}
-              aria-label={showPassword ? "Hide password" : "Show password"}
+              aria-label={showPassword ? "Приховати пароль" : "Показати пароль"}
             >
               <svg
                 className={styles.passwordIcon}
@@ -95,12 +95,12 @@ export default function LoginForm() {
         </div>
 
         <button className={styles.button} type="submit">
-          Login
+          Увійти
         </button>
         <p className={styles.instructionsLogin}>
-          Don`t have an account?{" "}
+          Ще не маєте облікового запису?{" "}
           <Link className={styles.linkLogin} href="/register">
-            Register
+            Зареєструватися
           </Link>
         </p>
       </Form>
