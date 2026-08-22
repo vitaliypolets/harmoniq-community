@@ -70,7 +70,7 @@ export function Footer({ isAuthPage = false }: FooterProps) {
         <Link
           href="/"
           className={styles.logoLink}
-          aria-label="Harmoniq Home"
+          aria-label="Harmoniq Community Home"
           onClick={handleLogoClick}
         >
           <svg

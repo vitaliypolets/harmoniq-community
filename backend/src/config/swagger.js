@@ -1,78 +1,78 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
-  openapi: '3.0.3',
+  openapi: "3.0.3",
 
   info: {
-    title: 'Harmoniq API',
-    version: '1.0.0',
-    description: 'REST API documentation for Harmoniq backend',
+    title: "Harmoniq Community API",
+    version: "1.0.0",
+    description: "REST API documentation for Harmoniq Community backend",
   },
 
   servers: [
     {
-      url: '/api',
-      description: 'Current server',
+      url: "/api",
+      description: "Current server",
     },
   ],
 
   tags: [
     {
-      name: 'System',
-      description: 'System endpoints',
+      name: "System",
+      description: "System endpoints",
     },
     {
-      name: 'Auth',
-      description: 'Authentication and session management',
+      name: "Auth",
+      description: "Authentication and session management",
     },
     {
-      name: 'Users',
-      description: 'Users and authors',
+      name: "Users",
+      description: "Users and authors",
     },
     {
-      name: 'Bookmarks',
-      description: 'Saved articles',
+      name: "Bookmarks",
+      description: "Saved articles",
     },
     {
-      name: 'Articles',
-      description: 'Articles management',
+      name: "Articles",
+      description: "Articles management",
     },
   ],
 
   components: {
     securitySchemes: {
       bearerAuth: {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT',
+        type: "http",
+        scheme: "bearer",
+        bearerFormat: "JWT",
       },
 
       refreshTokenCookie: {
-        type: 'apiKey',
-        in: 'cookie',
-        name: 'refreshToken',
+        type: "apiKey",
+        in: "cookie",
+        name: "refreshToken",
       },
 
       sessionIdCookie: {
-        type: 'apiKey',
-        in: 'cookie',
-        name: 'sessionId',
+        type: "apiKey",
+        in: "cookie",
+        name: "sessionId",
       },
     },
 
     schemas: {
       Error: {
-        type: 'object',
+        type: "object",
 
         properties: {
           status: {
-            type: 'integer',
+            type: "integer",
             example: 400,
           },
 
           message: {
-            type: 'string',
-            example: 'Validation error',
+            type: "string",
+            example: "Validation error",
           },
 
           details: {
@@ -82,146 +82,145 @@ const swaggerDefinition = {
       },
 
       PublicUser: {
-        type: 'object',
+        type: "object",
 
         properties: {
           id: {
-            type: 'string',
-            example: '6881563901add19ee16fcff9',
+            type: "string",
+            example: "6881563901add19ee16fcff9",
           },
 
           name: {
-            type: 'string',
-            example: 'Test User',
+            type: "string",
+            example: "Test User",
           },
 
           email: {
-            type: 'string',
-            format: 'email',
-            example: 'test@example.com',
+            type: "string",
+            format: "email",
+            example: "test@example.com",
           },
 
           avatarUrl: {
-            type: 'string',
+            type: "string",
             nullable: true,
-            example: 'https://res.cloudinary.com/example/avatar.jpg',
+            example: "https://res.cloudinary.com/example/avatar.jpg",
           },
 
           articlesAmount: {
-            type: 'integer',
+            type: "integer",
             example: 4,
           },
-
         },
       },
 
       Author: {
-        type: 'object',
+        type: "object",
 
         properties: {
           id: {
-            type: 'string',
+            type: "string",
           },
 
           name: {
-            type: 'string',
+            type: "string",
           },
 
           avatarUrl: {
-            type: 'string',
+            type: "string",
             nullable: true,
           },
 
           articlesAmount: {
-            type: 'integer',
+            type: "integer",
             example: 3,
           },
         },
       },
 
       Article: {
-        type: 'object',
+        type: "object",
 
         properties: {
           id: {
-            type: 'string',
-            example: '6881563901add19ee16fcff9',
+            type: "string",
+            example: "6881563901add19ee16fcff9",
           },
 
           title: {
-            type: 'string',
-            example: 'How to find harmony',
+            type: "string",
+            example: "How to find harmony",
           },
 
           description: {
-            type: 'string',
-            example: 'Short article description',
+            type: "string",
+            example: "Short article description",
           },
 
           article: {
-            type: 'string',
-            example: 'Full article text',
+            type: "string",
+            example: "Full article text",
           },
 
           imageUrl: {
-            type: 'string',
-            example: 'https://res.cloudinary.com/example/article.jpg',
+            type: "string",
+            example: "https://res.cloudinary.com/example/article.jpg",
           },
 
           publicationDate: {
-            type: 'string',
-            format: 'date',
-            example: '2026-08-12',
+            type: "string",
+            format: "date",
+            example: "2026-08-12",
           },
 
           authorId: {
-            type: 'string',
+            type: "string",
           },
 
           viewsCount: {
-            type: 'integer',
+            type: "integer",
             example: 12,
           },
 
           category: {
-            type: 'string',
-            enum: ['popular', 'general'],
-            example: 'general',
+            type: "string",
+            enum: ["popular", "general"],
+            example: "general",
           },
 
           createdAt: {
-            type: 'string',
-            format: 'date-time',
+            type: "string",
+            format: "date-time",
           },
 
           updatedAt: {
-            type: 'string',
-            format: 'date-time',
+            type: "string",
+            format: "date-time",
           },
         },
       },
 
       Pagination: {
-        type: 'object',
+        type: "object",
 
         properties: {
           page: {
-            type: 'integer',
+            type: "integer",
             example: 1,
           },
 
           perPage: {
-            type: 'integer',
+            type: "integer",
             example: 8,
           },
 
           total: {
-            type: 'integer',
+            type: "integer",
             example: 48,
           },
 
           hasNextPage: {
-            type: 'boolean',
+            type: "boolean",
             example: true,
           },
         },
@@ -230,35 +229,35 @@ const swaggerDefinition = {
   },
 
   paths: {
-    '/health': {
+    "/health": {
       get: {
-        tags: ['System'],
-        summary: 'Health check',
+        tags: ["System"],
+        summary: "Health check",
 
         responses: {
           200: {
-            description: 'API is running',
+            description: "API is running",
 
             content: {
-              'application/json': {
+              "application/json": {
                 schema: {
-                  type: 'object',
+                  type: "object",
 
                   properties: {
                     data: {
-                      type: 'object',
+                      type: "object",
 
                       properties: {
                         status: {
-                          type: 'string',
-                          example: 'ok',
+                          type: "string",
+                          example: "ok",
                         },
                       },
                     },
 
                     message: {
-                      type: 'string',
-                      example: 'Success',
+                      type: "string",
+                      example: "Success",
                     },
                   },
                 },
@@ -269,47 +268,47 @@ const swaggerDefinition = {
       },
     },
 
-    '/auth/register': {
+    "/auth/register": {
       post: {
-        tags: ['Auth'],
-        summary: 'Register a new user',
+        tags: ["Auth"],
+        summary: "Register a new user",
 
         requestBody: {
           required: true,
 
           content: {
-            'multipart/form-data': {
+            "multipart/form-data": {
               schema: {
-                type: 'object',
+                type: "object",
 
-                required: ['name', 'email', 'password'],
+                required: ["name", "email", "password"],
 
                 properties: {
                   name: {
-                    type: 'string',
+                    type: "string",
                     minLength: 2,
                     maxLength: 32,
-                    example: 'Test User',
+                    example: "Test User",
                   },
 
                   email: {
-                    type: 'string',
-                    format: 'email',
+                    type: "string",
+                    format: "email",
                     maxLength: 64,
-                    example: 'test@example.com',
+                    example: "test@example.com",
                   },
 
                   password: {
-                    type: 'string',
+                    type: "string",
                     minLength: 8,
                     maxLength: 64,
-                    example: 'Password123',
+                    example: "Password123",
                   },
 
                   avatar: {
-                    type: 'string',
-                    format: 'binary',
-                    description: 'Optional avatar. JPEG, PNG or WebP. Max size 1 MB.',
+                    type: "string",
+                    format: "binary",
+                    description: "Optional avatar. JPEG, PNG or WebP. Max size 1 MB.",
                   },
                 },
               },
@@ -319,48 +318,48 @@ const swaggerDefinition = {
 
         responses: {
           201: {
-            description: 'User successfully registered',
+            description: "User successfully registered",
           },
 
           400: {
-            description: 'Validation error',
+            description: "Validation error",
           },
 
           409: {
-            description: 'Email already in use',
+            description: "Email already in use",
           },
         },
       },
     },
 
-    '/auth/login': {
+    "/auth/login": {
       post: {
-        tags: ['Auth'],
-        summary: 'Login user',
+        tags: ["Auth"],
+        summary: "Login user",
 
         requestBody: {
           required: true,
 
           content: {
-            'application/json': {
+            "application/json": {
               schema: {
-                type: 'object',
+                type: "object",
 
-                required: ['email', 'password'],
+                required: ["email", "password"],
 
                 properties: {
                   email: {
-                    type: 'string',
-                    format: 'email',
+                    type: "string",
+                    format: "email",
                     maxLength: 64,
-                    example: 'test@example.com',
+                    example: "test@example.com",
                   },
 
                   password: {
-                    type: 'string',
+                    type: "string",
                     minLength: 8,
                     maxLength: 64,
-                    example: 'Password123',
+                    example: "Password123",
                   },
                 },
               },
@@ -370,31 +369,31 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Successful login. refreshToken and sessionId cookies are created.',
+            description: "Successful login. refreshToken and sessionId cookies are created.",
 
             content: {
-              'application/json': {
+              "application/json": {
                 schema: {
-                  type: 'object',
+                  type: "object",
 
                   properties: {
                     data: {
-                      type: 'object',
+                      type: "object",
 
                       properties: {
                         user: {
-                          $ref: '#/components/schemas/PublicUser',
+                          $ref: "#/components/schemas/PublicUser",
                         },
 
                         accessToken: {
-                          type: 'string',
+                          type: "string",
                         },
                       },
                     },
 
                     message: {
-                      type: 'string',
-                      example: 'Successfully logged in!',
+                      type: "string",
+                      example: "Successfully logged in!",
                     },
                   },
                 },
@@ -403,20 +402,20 @@ const swaggerDefinition = {
           },
 
           400: {
-            description: 'Validation error',
+            description: "Validation error",
           },
 
           401: {
-            description: 'Invalid email or password',
+            description: "Invalid email or password",
           },
         },
       },
     },
 
-    '/auth/session': {
+    "/auth/session": {
       post: {
-        tags: ['Auth'],
-        summary: 'Refresh authentication session',
+        tags: ["Auth"],
+        summary: "Refresh authentication session",
 
         security: [
           {
@@ -427,27 +426,27 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Session successfully refreshed',
+            description: "Session successfully refreshed",
 
             content: {
-              'application/json': {
+              "application/json": {
                 schema: {
-                  type: 'object',
+                  type: "object",
 
                   properties: {
                     data: {
-                      type: 'object',
+                      type: "object",
 
                       properties: {
                         accessToken: {
-                          type: 'string',
+                          type: "string",
                         },
                       },
                     },
 
                     message: {
-                      type: 'string',
-                      example: 'Successfully refreshed a session!',
+                      type: "string",
+                      example: "Successfully refreshed a session!",
                     },
                   },
                 },
@@ -456,50 +455,50 @@ const swaggerDefinition = {
           },
 
           401: {
-            description: 'Refresh token missing, invalid or session expired',
+            description: "Refresh token missing, invalid or session expired",
           },
 
           404: {
-            description: 'User not found',
+            description: "User not found",
           },
         },
       },
 
       delete: {
-        tags: ['Auth'],
-        summary: 'Logout and delete current session',
+        tags: ["Auth"],
+        summary: "Logout and delete current session",
 
         responses: {
           204: {
-            description: 'Session deleted and cookies cleared',
+            description: "Session deleted and cookies cleared",
           },
         },
       },
     },
 
-    '/users': {
+    "/users": {
       get: {
-        tags: ['Users'],
-        summary: 'Get users list',
+        tags: ["Users"],
+        summary: "Get users list",
 
         parameters: [
           {
-            in: 'query',
-            name: 'page',
+            in: "query",
+            name: "page",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               default: 1,
             },
           },
 
           {
-            in: 'query',
-            name: 'perPage',
+            in: "query",
+            name: "perPage",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               maximum: 100,
               default: 20,
@@ -507,21 +506,21 @@ const swaggerDefinition = {
           },
 
           {
-            in: 'query',
-            name: 'sort',
+            in: "query",
+            name: "sort",
 
             schema: {
-              type: 'string',
-              enum: ['articlesAmount', 'createdAt', 'name', 'popular'],
+              type: "string",
+              enum: ["articlesAmount", "createdAt", "name", "popular"],
             },
           },
 
           {
-            in: 'query',
-            name: 'limit',
+            in: "query",
+            name: "limit",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               maximum: 50,
             },
@@ -530,78 +529,78 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Users list returned successfully',
+            description: "Users list returned successfully",
           },
         },
       },
     },
 
-    '/users/{userId}': {
+    "/users/{userId}": {
       get: {
-        tags: ['Users'],
-        summary: 'Get user details',
+        tags: ["Users"],
+        summary: "Get user details",
 
         parameters: [
           {
-            in: 'path',
-            name: 'userId',
+            in: "path",
+            name: "userId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
         ],
 
         responses: {
           200: {
-            description: 'User information',
+            description: "User information",
           },
 
           400: {
-            description: 'Invalid user id',
+            description: "Invalid user id",
           },
 
           404: {
-            description: 'User not found',
+            description: "User not found",
           },
         },
       },
     },
 
-    '/users/{userId}/articles': {
+    "/users/{userId}/articles": {
       get: {
-        tags: ['Users'],
-        summary: 'Get articles created by user',
+        tags: ["Users"],
+        summary: "Get articles created by user",
 
         parameters: [
           {
-            in: 'path',
-            name: 'userId',
+            in: "path",
+            name: "userId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
 
           {
-            in: 'query',
-            name: 'page',
+            in: "query",
+            name: "page",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               default: 1,
             },
           },
 
           {
-            in: 'query',
-            name: 'perPage',
+            in: "query",
+            name: "perPage",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               maximum: 100,
               default: 8,
@@ -611,20 +610,20 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'User articles',
+            description: "User articles",
           },
 
           400: {
-            description: 'Invalid userId or pagination',
+            description: "Invalid userId or pagination",
           },
         },
       },
     },
 
-    '/users/me': {
+    "/users/me": {
       get: {
-        tags: ['Users'],
-        summary: 'Get current user',
+        tags: ["Users"],
+        summary: "Get current user",
 
         security: [
           {
@@ -634,18 +633,18 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Current user data',
+            description: "Current user data",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
 
       patch: {
-        tags: ['Users'],
-        summary: 'Update current user',
+        tags: ["Users"],
+        summary: "Update current user",
 
         security: [
           {
@@ -655,21 +654,21 @@ const swaggerDefinition = {
 
         requestBody: {
           content: {
-            'multipart/form-data': {
+            "multipart/form-data": {
               schema: {
-                type: 'object',
+                type: "object",
 
                 properties: {
                   name: {
-                    type: 'string',
+                    type: "string",
                     minLength: 2,
                     maxLength: 32,
-                    example: 'Updated User',
+                    example: "Updated User",
                   },
 
                   avatar: {
-                    type: 'string',
-                    format: 'binary',
+                    type: "string",
+                    format: "binary",
                   },
                 },
               },
@@ -679,24 +678,24 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'User updated successfully',
+            description: "User updated successfully",
           },
 
           400: {
-            description: 'Validation error',
+            description: "Validation error",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
     },
 
-    '/users/me/bookmarks': {
+    "/users/me/bookmarks": {
       get: {
-        tags: ['Bookmarks'],
-        summary: 'Get current user bookmarks',
+        tags: ["Bookmarks"],
+        summary: "Get current user bookmarks",
 
         security: [
           {
@@ -706,22 +705,22 @@ const swaggerDefinition = {
 
         parameters: [
           {
-            in: 'query',
-            name: 'page',
+            in: "query",
+            name: "page",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               default: 1,
             },
           },
 
           {
-            in: 'query',
-            name: 'perPage',
+            in: "query",
+            name: "perPage",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               maximum: 100,
               default: 12,
@@ -731,18 +730,18 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Bookmarks list',
+            description: "Bookmarks list",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
 
       post: {
-        tags: ['Bookmarks'],
-        summary: 'Add article to bookmarks',
+        tags: ["Bookmarks"],
+        summary: "Add article to bookmarks",
 
         security: [
           {
@@ -754,16 +753,16 @@ const swaggerDefinition = {
           required: true,
 
           content: {
-            'application/json': {
+            "application/json": {
               schema: {
-                type: 'object',
+                type: "object",
 
-                required: ['articleId'],
+                required: ["articleId"],
 
                 properties: {
                   articleId: {
-                    type: 'string',
-                    example: '6881563901add19ee16fcff9',
+                    type: "string",
+                    example: "6881563901add19ee16fcff9",
                   },
                 },
               },
@@ -773,24 +772,24 @@ const swaggerDefinition = {
 
         responses: {
           201: {
-            description: 'Article bookmarked',
+            description: "Article bookmarked",
           },
 
           400: {
-            description: 'Invalid bookmark data',
+            description: "Invalid bookmark data",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
     },
 
-    '/users/me/bookmarks/{articleId}': {
+    "/users/me/bookmarks/{articleId}": {
       delete: {
-        tags: ['Bookmarks'],
-        summary: 'Remove article from bookmarks',
+        tags: ["Bookmarks"],
+        summary: "Remove article from bookmarks",
 
         security: [
           {
@@ -800,55 +799,55 @@ const swaggerDefinition = {
 
         parameters: [
           {
-            in: 'path',
-            name: 'articleId',
+            in: "path",
+            name: "articleId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
         ],
 
         responses: {
           200: {
-            description: 'Bookmark successfully removed',
+            description: "Bookmark successfully removed",
           },
 
           400: {
-            description: 'Invalid articleId',
+            description: "Invalid articleId",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
     },
 
-    '/articles': {
+    "/articles": {
       get: {
-        tags: ['Articles'],
-        summary: 'Get articles list',
+        tags: ["Articles"],
+        summary: "Get articles list",
 
         parameters: [
           {
-            in: 'query',
-            name: 'page',
+            in: "query",
+            name: "page",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               default: 1,
             },
           },
 
           {
-            in: 'query',
-            name: 'perPage',
+            in: "query",
+            name: "perPage",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
               maximum: 100,
               default: 8,
@@ -856,40 +855,40 @@ const swaggerDefinition = {
           },
 
           {
-            in: 'query',
-            name: 'filter',
+            in: "query",
+            name: "filter",
 
             schema: {
-              type: 'string',
-              enum: ['all', 'popular'],
-              default: 'all',
+              type: "string",
+              enum: ["all", "popular"],
+              default: "all",
             },
           },
 
           {
-            in: 'query',
-            name: 'authorId',
+            in: "query",
+            name: "authorId",
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
 
           {
-            in: 'query',
-            name: 'excludeId',
+            in: "query",
+            name: "excludeId",
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
 
           {
-            in: 'query',
-            name: 'limit',
+            in: "query",
+            name: "limit",
 
             schema: {
-              type: 'integer',
+              type: "integer",
               minimum: 1,
             },
           },
@@ -897,18 +896,18 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Articles list',
+            description: "Articles list",
           },
 
           400: {
-            description: 'Invalid page or authorId',
+            description: "Invalid page or authorId",
           },
         },
       },
 
       post: {
-        tags: ['Articles'],
-        summary: 'Create new article',
+        tags: ["Articles"],
+        summary: "Create new article",
 
         security: [
           {
@@ -920,35 +919,35 @@ const swaggerDefinition = {
           required: true,
 
           content: {
-            'multipart/form-data': {
+            "multipart/form-data": {
               schema: {
-                type: 'object',
+                type: "object",
 
-                required: ['title', 'article', 'publicationDate', 'image'],
+                required: ["title", "article", "publicationDate", "image"],
 
                 properties: {
                   title: {
-                    type: 'string',
+                    type: "string",
                     minLength: 3,
                     maxLength: 48,
                   },
 
                   article: {
-                    type: 'string',
+                    type: "string",
                     minLength: 100,
                     maxLength: 4000,
                   },
 
                   publicationDate: {
-                    type: 'string',
-                    pattern: '^\\d{4}-\\d{2}-\\d{2}$',
-                    example: '2026-08-12',
+                    type: "string",
+                    pattern: "^\\d{4}-\\d{2}-\\d{2}$",
+                    example: "2026-08-12",
                   },
 
                   image: {
-                    type: 'string',
-                    format: 'binary',
-                    description: 'Required article image. JPEG, PNG or WebP. Max size 1 MB.',
+                    type: "string",
+                    format: "binary",
+                    description: "Required article image. JPEG, PNG or WebP. Max size 1 MB.",
                   },
                 },
               },
@@ -958,55 +957,55 @@ const swaggerDefinition = {
 
         responses: {
           201: {
-            description: 'Article successfully created',
+            description: "Article successfully created",
           },
 
           400: {
-            description: 'Validation error or image missing',
+            description: "Validation error or image missing",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
         },
       },
     },
 
-    '/articles/{articleId}': {
+    "/articles/{articleId}": {
       get: {
-        tags: ['Articles'],
-        summary: 'Get article details',
+        tags: ["Articles"],
+        summary: "Get article details",
 
         parameters: [
           {
-            in: 'path',
-            name: 'articleId',
+            in: "path",
+            name: "articleId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
         ],
 
         responses: {
           200: {
-            description: 'Article details',
+            description: "Article details",
           },
 
           400: {
-            description: 'Invalid article ID',
+            description: "Invalid article ID",
           },
 
           404: {
-            description: 'Article not found',
+            description: "Article not found",
           },
         },
       },
 
       patch: {
-        tags: ['Articles'],
-        summary: 'Update article',
+        tags: ["Articles"],
+        summary: "Update article",
 
         security: [
           {
@@ -1016,12 +1015,12 @@ const swaggerDefinition = {
 
         parameters: [
           {
-            in: 'path',
-            name: 'articleId',
+            in: "path",
+            name: "articleId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
         ],
@@ -1030,34 +1029,33 @@ const swaggerDefinition = {
           required: true,
 
           content: {
-            'multipart/form-data': {
+            "multipart/form-data": {
               schema: {
-                type: 'object',
+                type: "object",
 
                 properties: {
                   title: {
-                    type: 'string',
+                    type: "string",
                     minLength: 3,
                     maxLength: 48,
                   },
 
                   article: {
-                    type: 'string',
+                    type: "string",
                     minLength: 100,
                     maxLength: 4000,
                   },
 
                   publicationDate: {
-                    type: 'string',
-                    pattern: '^\\d{4}-\\d{2}-\\d{2}$',
+                    type: "string",
+                    pattern: "^\\d{4}-\\d{2}-\\d{2}$",
                   },
 
                   image: {
-                    type: 'string',
-                    format: 'binary',
-                    description: 'Optional article image. JPEG, PNG or WebP. Max size 1 MB.',
+                    type: "string",
+                    format: "binary",
+                    description: "Optional article image. JPEG, PNG or WebP. Max size 1 MB.",
                   },
-
                 },
               },
             },
@@ -1066,30 +1064,30 @@ const swaggerDefinition = {
 
         responses: {
           200: {
-            description: 'Article successfully updated',
+            description: "Article successfully updated",
           },
 
           400: {
-            description: 'Validation error',
+            description: "Validation error",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
 
           403: {
-            description: 'Not allowed to update this article',
+            description: "Not allowed to update this article",
           },
 
           404: {
-            description: 'Article not found',
+            description: "Article not found",
           },
         },
       },
 
       delete: {
-        tags: ['Articles'],
-        summary: 'Delete article',
+        tags: ["Articles"],
+        summary: "Delete article",
 
         security: [
           {
@@ -1099,31 +1097,31 @@ const swaggerDefinition = {
 
         parameters: [
           {
-            in: 'path',
-            name: 'articleId',
+            in: "path",
+            name: "articleId",
             required: true,
 
             schema: {
-              type: 'string',
+              type: "string",
             },
           },
         ],
 
         responses: {
           200: {
-            description: 'Article successfully deleted',
+            description: "Article successfully deleted",
           },
 
           401: {
-            description: 'Unauthorized',
+            description: "Unauthorized",
           },
 
           403: {
-            description: 'Not allowed to delete this article',
+            description: "Not allowed to delete this article",
           },
 
           404: {
-            description: 'Article not found',
+            description: "Article not found",
           },
         },
       },
