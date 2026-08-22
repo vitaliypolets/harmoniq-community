@@ -5,8 +5,8 @@ export default function RegisterPage() {
   return (
     <div className={styles.page}>
       <div className={styles.pageWrapper}>
-        <h1 className={styles.title}>Register</h1>
-        <p className={styles.subtitle}>Join our community of mindfulness and wellbeing!</p>
+        <h1 className={styles.title}>Зареєструватися</h1>
+        <p className={styles.subtitle}>Приєднуйтеся до нашої спільноти усвідомленості та добробуту!</p>
         <RegisterForm />
       </div>
     </div>

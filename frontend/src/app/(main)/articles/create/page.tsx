@@ -8,8 +8,8 @@ import styles from './CreateArticlePage.module.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? '';
 
-const pageTitle = 'Create an article';
-const pageDescription = 'Create a new personal article in Harmoniq.';
+const pageTitle = 'Створити статтю';
+const pageDescription = 'Create a new personal article in Harmoniq Community.';
 const pageUrl = `${siteUrl}/articles/create`;
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function CreateArticlePage() {
     <AuthGuard>
       <section>
         <Container className={styles.page}>
-          <h1 className={styles.title}>Create an article</h1>
+          <h1 className={styles.title}>Створити статтю</h1>
           <AddArticleForm />
         </Container>
       </section>

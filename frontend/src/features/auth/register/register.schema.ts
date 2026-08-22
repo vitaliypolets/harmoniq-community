@@ -13,27 +13,27 @@ export const PASSWORD_REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A
 export const registerSchema = Yup.object({
   name: Yup.string()
     .trim()
-    .required("Name is required")
-    .min(2, "Name must be at least 2 characters")
-    .max(32, "Name must be at most 32 characters")
-    .matches(NAME_REGEXP, "Name must not contain numbers or special characters"),
+    .required("Ім’я є обов’язковим")
+    .min(2, "Ім’я має містити щонайменше 2 символи")
+    .max(32, "Ім’я має містити не більше 32 символів")
+    .matches(NAME_REGEXP, "Ім’я не повинно містити цифр або спеціальних символів"),
 
   email: Yup.string()
     .trim()
-    .required("Email is required")
-    .max(64, "Email must be at most 64 characters")
-    .matches(EMAIL_REGEXP, "Invalid email format"),
+    .required("Email є обов’язковим")
+    .max(64, "Email має містити не більше 64 символів")
+    .matches(EMAIL_REGEXP, "Некоректний формат email"),
 
   password: Yup.string()
-    .required("Password is required")
-    .min(8, "Password must be at least 8 characters")
-    .max(64, "Password must be at most 64 characters")
+    .required("Пароль є обов’язковим")
+    .min(8, "Пароль має містити щонайменше 8 символів")
+    .max(64, "Пароль має містити не більше 64 символів")
     .matches(
       PASSWORD_REGEXP,
-      "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&)",
+      "Пароль має містити щонайменше одну велику літеру, одну малу літеру, одну цифру та один спеціальний символ (@$!%*?&)",
     ),
 
   confirmPassword: Yup.string()
-    .required("Please repeat your password")
-    .oneOf([Yup.ref("password")], "Passwords must match"),
+    .required("Повторіть пароль")
+    .oneOf([Yup.ref("password")], "Паролі мають збігатися"),
 });

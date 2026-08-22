@@ -32,15 +32,15 @@ const merienda = Merienda({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Harmoniq',
-    template: '%s | Harmoniq',
+    default: 'Harmoniq Community',
+    template: '%s | Harmoniq Community',
   },
-  description: 'Find your harmony in community.',
+  description: 'Знайдіть свою гармонію у спільноті.',
   openGraph: {
-    title: 'Harmoniq',
-    description: 'Find your harmony in community.',
+    title: 'Harmoniq Community',
+    description: 'Знайдіть свою гармонію у спільноті.',
     url: 'https://harmoniq.com',
-    siteName: 'Harmoniq',
+    siteName: 'Harmoniq Community',
     locale: 'uk_UA',
     type: 'website',
   },

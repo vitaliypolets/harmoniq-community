@@ -30,7 +30,7 @@ export default function LogoutUserModalClient({ isOpen, onClose }: LogoutUserMod
       await logout();
     } catch (error) {
       console.error("Logout error:", error);
-      toast.error("Failed to log out. Please try again.");
+      toast.error("Не вдалося вийти. Спробуйте ще раз.");
     } finally {
       clearIsAuthenticated();
       onClose();
@@ -42,9 +42,9 @@ export default function LogoutUserModalClient({ isOpen, onClose }: LogoutUserMod
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={css.container}>
-        <h3 className={css.title}>Are you sure?</h3>
+        <h3 className={css.title}>Ви впевнені?</h3>
 
-        <p className={css.message}>We will miss you!</p>
+        <p className={css.message}>Ми будемо сумувати за вами!</p>
 
         <div className={css.containerButtons}>
           <button
@@ -53,11 +53,11 @@ export default function LogoutUserModalClient({ isOpen, onClose }: LogoutUserMod
             onClick={handleLogoutUser}
             disabled={isLoading}
           >
-            {isLoading ? "Logging out..." : "Log out"}
+            {isLoading ? "Вихід..." : "Вийти"}
           </button>
 
           <button type="button" className={css.buttonCancel} onClick={onClose} disabled={isLoading}>
-            Cancel
+            Скасувати
           </button>
         </div>
       </div>

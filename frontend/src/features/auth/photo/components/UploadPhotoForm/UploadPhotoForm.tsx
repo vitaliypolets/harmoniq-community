@@ -65,13 +65,13 @@ export default function UploadPhotoForm() {
     }
 
     if (!ALLOWED_AVATAR_MIME_TYPES.includes(file.type)) {
-      setError("Only JPEG, PNG and WebP are allowed");
+      setError("Дозволені лише JPEG, PNG та WebP");
       event.target.value = "";
       return;
     }
 
     if (file.size > MAX_AVATAR_SIZE) {
-      setError("Avatar must be up to 1 MB");
+      setError("Розмір аватара не повинен перевищувати 1 МБ");
       event.target.value = "";
       return;
     }
@@ -105,12 +105,12 @@ export default function UploadPhotoForm() {
       setSession(result.user, result.accessToken);
       clearRegisterDraft();
       clearRegisterPassword();
-      toast.success("Welcome to Harmoniq!");
+      toast.success("Ласкаво просимо до Harmoniq Community!");
       router.replace("/");
     } catch (err) {
       const message = isAxiosError<{ message?: string }>(err)
-        ? (err.response?.data?.message ?? "Registration failed. Please try again.")
-        : "Registration failed. Please try again.";
+        ? (err.response?.data?.message ?? "Не вдалося завершити реєстрацію. Спробуйте ще раз.")
+        : "Не вдалося завершити реєстрацію. Спробуйте ще раз.";
 
       toast.error(message, { duration: ERROR_REDIRECT_DELAY_MS });
 
@@ -126,20 +126,20 @@ export default function UploadPhotoForm() {
 
   return (
     <Modal isOpen onClose={handleClose} backdrop="transparent">
-      {isSubmitting && <Loader label="Saving..." />}
+      {isSubmitting && <Loader label="Збереження..." />}
 
       <div className={styles.content}>
-        <h1 className={styles.title}>Upload your photo</h1>
+        <h1 className={styles.title}>Завантажте своє фото</h1>
 
         <button
           type="button"
           className={styles.avatarButton}
           onClick={() => inputRef.current?.click()}
-          aria-label="Choose avatar"
+          aria-label="Вибрати аватар"
         >
           <Image
             src={previewUrl ?? getAvatarSrc(null)}
-            alt={previewUrl ? "Avatar preview" : "Default avatar"}
+            alt={previewUrl ? "Попередній перегляд аватара" : "Аватар за замовчуванням"}
             className={styles.avatarPreview}
             width={136}
             height={136}
@@ -165,7 +165,7 @@ export default function UploadPhotoForm() {
           disabled={isSubmitting || !avatarFile}
           onClick={() => completeRegistration(avatarFile)}
         >
-          Save
+          Зберегти
         </Button>
       </div>
     </Modal>

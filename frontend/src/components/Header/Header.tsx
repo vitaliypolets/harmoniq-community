@@ -79,7 +79,7 @@ export default function Header({ sticky = true }: HeaderProps) {
               onClick={() => setIsOpen(false)}
               href="/"
               className={css.headerLink}
-              aria-label="Home"
+              aria-label="Головна"
             >
               <svg className={css.logoIcon}>
                 <use href="/icons/sprite.svg#icon-logo" />
@@ -87,11 +87,11 @@ export default function Header({ sticky = true }: HeaderProps) {
             </Link>
 
             <div className={css.navigationDescFild}>
-              <nav aria-label="Main Navigation">
+              <nav aria-label="Головна навігація">
                 <ul className={css.navigationDesc}>
                   <li className={css.navigationItemDesc}>
                     <Link onClick={() => setIsOpen(false)} href="/" className={getLinkClass("/")}>
-                      Home
+                      Головна
                     </Link>
                   </li>
 
@@ -101,7 +101,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                       href="/articles"
                       className={getLinkClass("/articles")}
                     >
-                      Articles
+                      Статті
                     </Link>
                   </li>
 
@@ -111,7 +111,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                       href="/authors"
                       className={getLinkClass("/authors")}
                     >
-                      Creators
+                      Автори
                     </Link>
                   </li>
 
@@ -124,7 +124,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                           prefetch={false}
                           className={getLinkClass("/profile")}
                         >
-                          My Profile
+                          Мій профіль
                         </Link>
                       </li>
 
@@ -135,7 +135,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                           prefetch={false}
                           className={css.navigationLinkJoinDesc}
                         >
-                          Create an article
+                          Створити статтю
                         </Link>
                       </li>
 
@@ -155,7 +155,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                           prefetch={false}
                           className={getLinkClass("/login")}
                         >
-                          Log in
+                          Увійти
                         </Link>
                       </li>
 
@@ -166,7 +166,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                           prefetch={false}
                           className={css.navigationLinkJoinDesc}
                         >
-                          Join now
+                          Зареєструйся
                         </Link>
                       </li>
                     </>
@@ -179,7 +179,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                   className={css.navBarMobButton}
                   type="button"
                   onClick={handleBurger}
-                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                  aria-label={isOpen ? "Закрити меню" : "Відкрити меню"}
                 >
                   <svg className={css.icon}>
                     <use href={`/icons/sprite.svg#icon-${isOpen ? "close" : "burger"}`} />
@@ -192,11 +192,11 @@ export default function Header({ sticky = true }: HeaderProps) {
       </header>
 
       <div className={isOpen ? `${css.navBarMob} ${css.isOpen}` : css.navBarMob}>
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Головна навігація">
           <ul className={css.navigation}>
             <li className={css.navigationItem}>
               <Link onClick={() => setIsOpen(false)} href="/" className={getLinkClass("/")}>
-                Home
+                Головна
               </Link>
             </li>
 
@@ -229,7 +229,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                     prefetch={false}
                     className={getLinkClass("/profile")}
                   >
-                    My Profile
+                    Мій профіль
                   </Link>
                 </li>
 
@@ -240,7 +240,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                     prefetch={false}
                     className={css.navigationLinkJoin}
                   >
-                    Create an article
+                    Створити статтю
                   </Link>
                 </li>
 
@@ -260,7 +260,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                     prefetch={false}
                     className={getLinkClass("/login")}
                   >
-                    Log in
+                    Увійти
                   </Link>
                 </li>
 
@@ -271,7 +271,7 @@ export default function Header({ sticky = true }: HeaderProps) {
                     prefetch={false}
                     className={css.navigationLinkJoin}
                   >
-                    Join now
+                    Долучайся зараз!
                   </Link>
                 </li>
               </>
@@ -279,9 +279,7 @@ export default function Header({ sticky = true }: HeaderProps) {
           </ul>
         </nav>
       </div>
-
       <LogoutUserModalClient isOpen={isLogoutOpen} onClose={() => setIsLogoutOpen(false)} />
-
       <UserModal isOpen={isUserModalOpen} onClose={() => setIsUserModalOpen(false)} />
     </>
   );

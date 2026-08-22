@@ -8,18 +8,18 @@ import styles from './Footer.module.css';
 
 const NAV_LINKS = [
   {
-    label: 'Articles',
+    label: 'Статті',
     href: '/articles',
   },
   {
-    label: 'Account',
+    label: 'Профіль',
     href: '/profile',
   },
 ];
 
 const AUTH_NAV_LINKS = [
   {
-    label: 'Articles',
+    label: 'Статті',
     href: '/articles',
   },
 ];
@@ -70,7 +70,7 @@ export function Footer({ isAuthPage = false }: FooterProps) {
         <Link
           href="/"
           className={styles.logoLink}
-          aria-label="Harmoniq Home"
+          aria-label="Головна Harmoniq Community"
           onClick={handleLogoClick}
         >
           <svg
@@ -83,12 +83,12 @@ export function Footer({ isAuthPage = false }: FooterProps) {
         </Link>
 
         <p className={styles.copyright}>
-          © 2025 Harmoniq. All rights reserved.
+          © 2026 Harmoniq Community. Усі права захищено.
         </p>
 
         <nav
           className={styles.nav}
-          aria-label="Footer Navigation"
+          aria-label="Навігація у футері"
         >
           <ul className={styles.navList}>
             {navLinks.map((link) => (

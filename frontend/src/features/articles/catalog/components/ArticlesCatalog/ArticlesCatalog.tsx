@@ -43,7 +43,7 @@ export const ArticlesCatalog = ({
   if (isLoading) {
     return (
       <div className={css.statusMessage}>
-        Loading articles...
+        Завантаження статтей...
       </div>
     );
   }
@@ -51,7 +51,7 @@ export const ArticlesCatalog = ({
   if (isError) {
     return (
       <div className={css.errorMessage}>
-        Something went wrong. Failed to load articles.
+        Щось пішло не так. Не вдалося завантажити статті.
       </div>
     );
   }
@@ -59,7 +59,7 @@ export const ArticlesCatalog = ({
   if (!articles || articles.length === 0) {
     return (
       <div className={css.statusMessage}>
-        No articles found.
+        Статей не знайдено.
       </div>
     );
   }
@@ -79,7 +79,7 @@ export const ArticlesCatalog = ({
             onClick={onLoadMore}
             disabled={isLoadingMore}
           >
-            {isLoadingMore ? 'Loading...' : 'Load More'}
+            {isLoadingMore ? 'Завантаження...' : 'Показати ще'}
           </button>
         </div>
       )}

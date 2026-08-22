@@ -8,7 +8,7 @@ import type { ModalErrorSaveProps } from '../../article-shared.types';
 import styles from './ModalErrorSave.module.css';
 
 export const ModalErrorSave = ({
-  title = 'Error while saving',
+  title = 'Помилка під час збереження',
   description,
   onClose,
 }: ModalErrorSaveProps) => {
@@ -41,7 +41,7 @@ export const ModalErrorSave = ({
         aria-labelledby="modal-error-save-title"
         aria-describedby="modal-error-save-description"
       >
-        <button className={styles.closeButton} type="button" onClick={onClose} aria-label="Close">
+        <button className={styles.closeButton} type="button" onClick={onClose} aria-label="Закрити">
           <svg className={styles.closeIcon} width="20" height="20" aria-hidden="true">
             <use href="/icons/sprite.svg#icon-close" />
           </svg>
@@ -57,11 +57,11 @@ export const ModalErrorSave = ({
 
         <div className={styles.actions}>
           <Link className={`${styles.button} ${styles.loginButton}`} href="/login">
-            Login
+            Увійти
           </Link>
 
           <Link className={`${styles.button} ${styles.registerButton}`} href="/register">
-            Register
+            Зареєструватися
           </Link>
         </div>
       </div>

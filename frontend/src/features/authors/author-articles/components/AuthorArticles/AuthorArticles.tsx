@@ -47,13 +47,13 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
 
   useEffect(() => {
     if (query.isError && !query.data) {
-      toast.error('Could not load author articles.');
+      toast.error('Не вдалося завантажити статті автора.');
     }
   }, [query.data, query.isError]);
 
   useEffect(() => {
     if (query.isFetchNextPageError) {
-      toast.error('Could not load more articles.');
+      toast.error('Не вдалося завантажити більше статей.');
     }
   }, [query.isFetchNextPageError]);
 
@@ -102,7 +102,7 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
 
   if (query.isPending) {
     return (
-      <section className={styles.section} aria-label="Author articles">
+      <section className={styles.section} aria-label="Статті автора">
         <Loader />
       </section>
     );
@@ -110,9 +110,9 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
 
   if (query.isError && !query.data) {
     return (
-      <section className={styles.section} aria-label="Author articles">
+      <section className={styles.section} aria-label="Статті автора">
         <div className={`${styles.state} ${styles.error}`} role="alert">
-          <p>Could not load author articles.</p>
+          <p>Не вдалося завантажити статті автора.</p>
           <Button
             className={styles.retryButton}
             size="sm"
@@ -127,10 +127,10 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
   }
 
   return (
-    <section className={styles.section} aria-label="Author articles">
+    <section className={styles.section} aria-label="Статті автора">
       {articles.length === 0 ? (
         <div className={styles.state} role="status">
-          <p>Nothing found.</p>
+          <p>Нічого не знайдено.</p>
         </div>
       ) : (
         <div ref={listWrapperRef}>
@@ -140,7 +140,7 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
 
       {query.isFetchNextPageError ? (
         <p className={styles.nextPageError} role="alert">
-          Could not load more articles.
+          Не вдалося завантажити більше статей.
         </p>
       ) : null}
 
@@ -153,7 +153,7 @@ export function AuthorArticles({ userId, author }: AuthorArticlesProps) {
             disabled={query.isFetchingNextPage}
             onClick={handleLoadMore}
           >
-            {query.isFetchingNextPage ? 'Loading...' : 'Load More'}
+            {query.isFetchingNextPage ? 'Завантаження...' : 'Показати ще'}
           </Button>
         </div>
       ) : null}

@@ -31,7 +31,7 @@ export function EmptyArticlesState({
       <span className={styles.alertIcon} aria-hidden="true">
         <Image src={alertIcon} width={40} height={40} alt="" />
       </span>
-      <h2>Nothing found.</h2>
+      <h2>Нічого не знайдено.</h2>
       <p>{description}</p>
       {children ? (
         <div className={styles.emptyContent}>{children}</div>

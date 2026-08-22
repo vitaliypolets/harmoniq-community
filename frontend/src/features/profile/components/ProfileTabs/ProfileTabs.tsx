@@ -8,8 +8,8 @@ import type { ProfileTab, ProfileTabsProps } from '../../profile.types';
 import styles from './ProfileTabs.module.css';
 
 const tabs: Array<{ value: ProfileTab; label: string }> = [
-  { value: 'my-articles', label: 'My Articles' },
-  { value: 'saved-articles', label: 'Saved Articles' },
+  { value: 'my-articles', label: 'Мої статті' },
+  { value: 'saved-articles', label: 'Збережені статті' },
 ];
 
 const isProfileTab = (value: string | null): value is ProfileTab =>
@@ -43,7 +43,7 @@ export function ProfileTabs({ myArticles, savedArticles }: ProfileTabsProps) {
     <section className={styles.section}>
       <nav
         className={styles.tabs}
-        aria-label="Profile article views"
+        aria-label="Вкладки статей профілю"
       >
         {tabs.map((tab) => {
           const isActive = tab.value === activeTab;

@@ -12,21 +12,21 @@ const ALLOWED_IMAGE_TYPES = [
 export const createArticleSchema = Yup.object({
   title: Yup.string()
     .trim()
-    .min(3, 'Title must contain at least 3 characters')
-    .max(48, 'Title must contain at most 48 characters')
-    .required('Title is required'),
+    .min(3, 'Заголовок має містити щонайменше 3 символи')
+    .max(48, 'Заголовок має містити не більше 48 символів')
+    .required('Заголовок є обов’язковим'),
 
   article: Yup.string()
     .trim()
-    .min(100, 'Article must contain at least 100 characters')
-    .max(4000, 'Article must contain at most 4000 characters')
-    .required('Article is required'),
+    .min(100, 'Стаття має містити щонайменше 100 символів')
+    .max(4000, 'Стаття має містити не більше 4000 символів')
+    .required('Текст статті є обов’язковим'),
 
   image: Yup.mixed<File>()
-    .required('Article image is required')
+    .required('Зображення статті є обов’язковим')
     .test(
       'fileSize',
-      'Image size must not exceed 1 MB',
+      'Розмір зображення не повинен перевищувати 1 МБ',
       value => {
         if (!value) return true;
 
@@ -35,7 +35,7 @@ export const createArticleSchema = Yup.object({
     )
     .test(
       'fileType',
-      'Only JPEG, PNG and WEBP images are allowed',
+      'Дозволені лише зображення JPEG, PNG та WEBP',
       value => {
         if (!value) return true;
 
@@ -46,8 +46,8 @@ export const createArticleSchema = Yup.object({
   publicationDate: Yup.string()
     .matches(
       /^\d{4}-\d{2}-\d{2}$/,
-      'Date must have format YYYY-MM-DD',
+      'Дата має бути у форматі YYYY-MM-DD',
     )
-    .required('Publication date is required'),
+    .required('Дата публікації є обов’язковою'),
 });
 

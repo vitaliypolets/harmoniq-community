@@ -132,7 +132,7 @@ const AddArticleForm = () => {
               htmlFor="title"
               className={css.label}
             >
-              {values.title ? 'Article Title' : 'Title'}
+              {values.title ? 'Заголовок статті' : 'Заголовок'}
             </label>
 
             <div
@@ -148,7 +148,7 @@ const AddArticleForm = () => {
                 id="title"
                 name="title"
                 type="text"
-                placeholder="Enter the title"
+                placeholder="Введіть заголовок"
                 className={css.input}
                 onChange={(
                   event: React.ChangeEvent<HTMLInputElement>,
@@ -188,7 +188,7 @@ const AddArticleForm = () => {
                 as="textarea"
                 id="article"
                 name="article"
-                placeholder="Enter a text"
+                placeholder="Введіть текст"
                 className={css.textarea}
                 onChange={(
                   event: React.ChangeEvent<HTMLTextAreaElement>,

@@ -47,7 +47,7 @@ export const Hero = () => {
           <Image
             src={heroBgMobile}
             sizes="(max-width: 767px) 361px, (max-width: 1439px) 430px, 0px"
-            alt="Person sitting peacefully in nature"
+            alt="Людина спокійно сидить на природі"
             priority
             fetchPriority="high"
             placeholder="blur"
@@ -59,7 +59,7 @@ export const Hero = () => {
           <Image
             src={heroBgDesktop}
             sizes="(min-width: 1440px) 805px, 0px"
-            alt="Person sitting peacefully in nature"
+            alt="Людина спокійно сидить на природі"
             priority
             fetchPriority="high"
             placeholder="blur"
@@ -69,9 +69,9 @@ export const Hero = () => {
 
         <div className={styles.content}>
           <h1 className={styles.title}>
-            Find your{" "}
-            <span className={styles.italic}>harmony</span>{" "}
-            in community
+            Знайди свою{" "}
+            <span className={styles.italic}>гармонію</span>{" "}
+            у спільноті
           </h1>
 
           <div className={styles.buttons}>
@@ -82,7 +82,7 @@ export const Hero = () => {
               className={styles.heroButton}
               onClick={scrollToArticles}
             >
-              Go to Articles
+              Перейти до статей
             </Button>
 
             <Button
@@ -91,7 +91,7 @@ export const Hero = () => {
               size="xl"
               className={`${styles.heroButton} ${styles.registerButton}`}
             >
-              Register
+              Зареєструватися
             </Button>
           </div>
         </div>

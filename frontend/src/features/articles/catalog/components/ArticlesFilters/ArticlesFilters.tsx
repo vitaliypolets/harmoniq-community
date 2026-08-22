@@ -4,8 +4,8 @@ import type { ArticlesFiltersProps, ArticleFilter } from "../../articles-catalog
 import css from './ArticlesFilters.module.css';
 
 const OPTIONS: { value: ArticleFilter; label: string }[] = [
-  { value: 'all', label: 'All' },
-  { value: 'popular', label: 'Popular' },
+  { value: 'all', label: 'Усі' },
+  { value: 'popular', label: 'Популярні' },
 ];
 
 export const ArticlesFilters = ({ activeFilter, onFilterChange }: ArticlesFiltersProps) => {

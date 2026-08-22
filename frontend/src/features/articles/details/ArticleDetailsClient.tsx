@@ -62,7 +62,7 @@ const ArticleDetailsClient = ({ articleId, initialData }: Props) => {
       };
     });
   };
-  const bookmarkLabel = isBookmarked ? "Unsave" : "Save";
+  const bookmarkLabel = isBookmarked ? "Видалити зі збережених" : "Зберегти";
 
   return (
     <Container>
@@ -72,7 +72,7 @@ const ArticleDetailsClient = ({ articleId, initialData }: Props) => {
             <div className={styles.recomendation}>
               <ArticleAuthor author={author} publicationDate={publicationDate} />
 
-              <p className={styles.intrastedText}>You can also interested</p>
+              <p className={styles.intrastedText}>Вас також може зацікавити</p>
 
               <ArticleRecommendations recommendations={recommendations} />
             </div>
